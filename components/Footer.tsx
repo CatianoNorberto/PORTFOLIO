@@ -1,8 +1,12 @@
+import { useTranslations } from "next-intl";
 import { siteConfig } from "@/lib/site";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 
 export function Footer() {
+  const tSite = useTranslations("Site");
+  const tCommon = useTranslations("Common");
+
   return (
     <footer className="border-t border-line/70 bg-background/70 py-10">
       <Container className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
@@ -11,10 +15,10 @@ export function Footer() {
             {siteConfig.name}
           </p>
           <p className="text-sm leading-7 text-muted-foreground">
-            {siteConfig.availability}
+            {tSite("availability")}
           </p>
           <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
-            {new Date().getFullYear()} • Portfólio pronto para deploy na Vercel
+            {new Date().getFullYear()} | {tCommon("portfolioReady")}
           </p>
         </div>
 

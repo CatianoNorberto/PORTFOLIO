@@ -2,6 +2,7 @@
 
 import type { ChangeEvent, FormEvent } from "react";
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 import type { ContactPayload } from "@/types/contact";
 import { siteConfig } from "@/lib/site";
 import { Button } from "@/components/ui/Button";
@@ -21,6 +22,8 @@ export function ContactForm() {
   const [form, setForm] = useState<ContactPayload>(initialForm);
   const [status, setStatus] = useState<FormStatus>({ type: "idle", message: "" });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const t = useTranslations("ContactForm");
+  const tCommon = useTranslations("Common");
 
   function handleChange(
     event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -47,25 +50,21 @@ export function ContactForm() {
         body: JSON.stringify(form),
       });
 
-      const result = (await response.json()) as { message?: string };
+      await response.json();
 
       if (!response.ok) {
-        throw new Error(result.message ?? "Nao foi possivel enviar a mensagem.");
+        throw new Error(t("sendError"));
       }
 
       setStatus({
         type: "success",
-        message:
-          result.message ?? "Mensagem recebida com sucesso.",
+        message: t("success"),
       });
       setForm(initialForm);
     } catch (error) {
       setStatus({
         type: "error",
-        message:
-          error instanceof Error
-            ? error.message
-            : "Ocorreu um erro ao enviar sua mensagem.",
+        message: error instanceof Error ? error.message : t("genericError"),
       });
     } finally {
       setIsSubmitting(false);
@@ -76,20 +75,20 @@ export function ContactForm() {
     <form className="space-y-5" onSubmit={handleSubmit}>
       <div className="grid gap-5 sm:grid-cols-2">
         <label className="flex flex-col gap-2 text-sm font-medium text-foreground">
-          Nome
+          {t("nameLabel")}
           <input
             required
             name="name"
             value={form.name}
             onChange={handleChange}
             autoComplete="name"
-            placeholder="Seu nome"
+            placeholder={t("namePlaceholder")}
             className="h-12 rounded-3xl border border-line bg-background/50 px-4 text-sm text-foreground outline-none transition-colors duration-300 placeholder:text-muted-foreground focus:border-cyan/40"
           />
         </label>
 
         <label className="flex flex-col gap-2 text-sm font-medium text-foreground">
-          Email
+          {t("emailLabel")}
           <input
             required
             type="email"
@@ -97,20 +96,20 @@ export function ContactForm() {
             value={form.email}
             onChange={handleChange}
             autoComplete="email"
-            placeholder="voce@empresa.com"
+            placeholder={t("emailPlaceholder")}
             className="h-12 rounded-3xl border border-line bg-background/50 px-4 text-sm text-foreground outline-none transition-colors duration-300 placeholder:text-muted-foreground focus:border-cyan/40"
           />
         </label>
       </div>
 
       <label className="flex flex-col gap-2 text-sm font-medium text-foreground">
-        Mensagem
+        {t("messageLabel")}
         <textarea
           required
           name="message"
           value={form.message}
           onChange={handleChange}
-          placeholder="Conte um pouco sobre o projeto, contexto ou oportunidade."
+          placeholder={t("messagePlaceholder")}
           rows={6}
           className="rounded-[1.75rem] border border-line bg-background/50 px-4 py-4 text-sm text-foreground outline-none transition-colors duration-300 placeholder:text-muted-foreground focus:border-cyan/40"
         />
@@ -118,10 +117,10 @@ export function ContactForm() {
 
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <Button type="submit" disabled={isSubmitting} size="lg">
-          {isSubmitting ? "Enviando..." : "Enviar mensagem"}
+          {isSubmitting ? tCommon("sending") : tCommon("sendMessage")}
         </Button>
         <p className="text-sm text-muted-foreground">
-          Se preferir, envie direto para{" "}
+          {t("directEmailPrefix")}{" "}
           <a
             href={`mailto:${siteConfig.email}`}
             className="font-medium text-foreground transition-colors duration-300 hover:text-accent"

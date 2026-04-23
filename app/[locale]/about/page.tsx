@@ -1,39 +1,57 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { skillGroups } from "@/data/skills";
 import { createPageMetadata } from "@/lib/metadata";
 import { siteConfig } from "@/lib/site";
+import type { AppLocale } from "@/i18n/routing";
 import { Card } from "@/components/ui/Card";
 import { Container } from "@/components/ui/Container";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 
-export const metadata: Metadata = createPageMetadata({
-  title: "Sobre",
-  description:
-    "Conheça a trajetória, o foco técnico e a forma de trabalho por trás deste portfólio full stack.",
-  path: "/about",
-  keywords: ["sobre desenvolvedor full stack", "trajetoria profissional"],
-});
+type AboutPageProps = PageProps<"/[locale]/about">;
 
-export default function AboutPage() {
+export async function generateMetadata({
+  params,
+}: AboutPageProps): Promise<Metadata> {
+  const { locale } = await params;
+
+  return createPageMetadata({
+    locale: locale as AppLocale,
+    pathname: "/about",
+    namespace: "Metadata.pages.about",
+  });
+}
+
+export default async function AboutPage({ params }: AboutPageProps) {
+  const { locale } = await params;
+
+  setRequestLocale(locale as AppLocale);
+
+  const [tAbout, tSite, tSkills] = await Promise.all([
+    getTranslations({ locale, namespace: "About" }),
+    getTranslations({ locale, namespace: "Site" }),
+    getTranslations({ locale, namespace: "SkillsData" }),
+  ]);
+
   return (
     <Container className="section-spacing space-y-20">
       <section className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
         <div className="space-y-8">
           <SectionTitle
-            eyebrow="Sobre mim"
-            title="Experiência full stack aplicada a produtos web, mobile e cenários financeiros."
-            description="Atuo do frontend ao backend em aplicações web e mobile, com foco em qualidade de código, performance, UX e boas práticas. Minha trajetória combina interfaces modernas, APIs robustas e evolução constante de produto."
+            eyebrow={tAbout("hero.eyebrow")}
+            title={tAbout("hero.title")}
+            description={tAbout("hero.description")}
           />
 
           <div className="grid gap-4 sm:grid-cols-3">
-            {siteConfig.stats.map((stat) => (
-              <Card key={stat.label} className="p-5">
+            {(["experience", "payments", "companies"] as const).map((statKey) => (
+              <Card key={statKey} className="p-5">
                 <p className="font-display text-3xl font-semibold text-foreground">
-                  {stat.value}
+                  {tSite(`stats.${statKey}.value`)}
                 </p>
                 <p className="mt-2 text-sm leading-6 text-muted-foreground">
-                  {stat.label}
+                  {tSite(`stats.${statKey}.label`)}
                 </p>
               </Card>
             ))}
@@ -45,13 +63,13 @@ export default function AboutPage() {
           <div className="relative space-y-6">
             <Image
               src="/profile-workspace.svg"
-              alt="Ilustração profissional representando desenvolvimento full stack"
+              alt={tAbout("hero.imageAlt")}
               width={900}
               height={900}
               className="w-full"
             />
             <p className="text-sm leading-7 text-muted-foreground">
-              {siteConfig.headline}
+              {tSite("headline")}
             </p>
           </div>
         </Card>
@@ -59,18 +77,20 @@ export default function AboutPage() {
 
       <section className="space-y-8">
         <SectionTitle
-          eyebrow="Como eu trabalho"
-          title="Princípios que guiam minhas decisões técnicas."
-          description="Meu currículo mostra uma atuação prática em entregas reais. Estes são os pilares que mais se repetem no meu jeito de construir software."
+          eyebrow={tAbout("principles.eyebrow")}
+          title={tAbout("principles.title")}
+          description={tAbout("principles.description")}
         />
 
         <div className="grid gap-6 md:grid-cols-3">
-          {siteConfig.principles.map((principle, index) => (
-            <Card key={principle} interactive className="p-6">
+          {(["quality", "performance", "ux"] as const).map((principleKey, index) => (
+            <Card key={principleKey} interactive className="p-6">
               <p className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan">
                 0{index + 1}
               </p>
-              <p className="mt-4 text-base leading-8 text-foreground">{principle}</p>
+              <p className="mt-4 text-base leading-8 text-foreground">
+                {tSite(`principles.${principleKey}`)}
+              </p>
             </Card>
           ))}
         </div>
@@ -78,19 +98,19 @@ export default function AboutPage() {
 
       <section className="space-y-8">
         <SectionTitle
-          eyebrow="Stack em profundidade"
-          title="Tecnologias e contextos em que atuo com mais recorrência."
-          description="Minha atuação passa por frontend, mobile, backend, APIs, bancos de dados e cloud, sempre conectando implementação com boa experiência de uso."
+          eyebrow={tAbout("stack.eyebrow")}
+          title={tAbout("stack.title")}
+          description={tAbout("stack.description")}
         />
 
         <div className="grid gap-6 md:grid-cols-2">
           {skillGroups.map((group) => (
-            <Card key={group.title} className="p-6">
+            <Card key={group.id} className="p-6">
               <h3 className="font-display text-2xl font-semibold text-foreground">
-                {group.title}
+                {tSkills(`${group.id}.title`)}
               </h3>
               <p className="mt-3 text-sm leading-7 text-muted-foreground">
-                {group.description}
+                {tSkills(`${group.id}.description`)}
               </p>
               <div className="mt-5 flex flex-wrap gap-2">
                 {group.items.map((item) => (
@@ -110,42 +130,48 @@ export default function AboutPage() {
       <section className="grid gap-6 lg:grid-cols-2">
         <Card className="p-6">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-cyan">
-            Formação acadêmica
+            {tAbout("educationLabel")}
           </p>
           <div className="mt-5 space-y-4">
-            {siteConfig.education.map((item) => (
-              <div key={`${item.title}-${item.institution}`} className="space-y-1">
-                <h3 className="font-display text-2xl font-semibold text-foreground">
-                  {item.title}
-                </h3>
-                <p className="text-sm text-muted-foreground">{item.institution}</p>
-                <p className="text-sm leading-7 text-foreground">{item.period}</p>
-              </div>
-            ))}
+            <div className="space-y-1">
+              <h3 className="font-display text-2xl font-semibold text-foreground">
+                {tSite("education.degree")}
+              </h3>
+              <p className="text-sm text-muted-foreground">
+                {tSite("education.institution")}
+              </p>
+              <p className="text-sm leading-7 text-foreground">
+                {tSite("education.period")}
+              </p>
+            </div>
           </div>
         </Card>
 
         <Card className="p-6">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-cyan">
-            Idiomas & Ferramentas
+            {tAbout("languagesToolsLabel")}
           </p>
           <div className="mt-5 space-y-6">
             <div>
-              <p className="text-sm font-semibold text-foreground">Idiomas</p>
+              <p className="text-sm font-semibold text-foreground">
+                {tAbout("languagesLabel")}
+              </p>
               <div className="mt-3 flex flex-wrap gap-2">
-                {siteConfig.languages.map((item) => (
+                {(["pt", "en", "es"] as const).map((languageKey) => (
                   <span
-                    key={item}
+                    key={languageKey}
                     className="rounded-full border border-line bg-background/45 px-3 py-2 text-xs font-medium text-foreground"
                   >
-                    {item}
+                    {tSite(`languages.${languageKey}`)}
                   </span>
                 ))}
               </div>
             </div>
 
             <div>
-              <p className="text-sm font-semibold text-foreground">Ferramentas</p>
+              <p className="text-sm font-semibold text-foreground">
+                {tAbout("toolsLabel")}
+              </p>
               <div className="mt-3 flex flex-wrap gap-2">
                 {siteConfig.tooling.map((item) => (
                   <span

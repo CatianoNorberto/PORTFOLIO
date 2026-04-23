@@ -1,57 +1,59 @@
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 import { siteConfig } from "@/lib/site";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { Container } from "@/components/ui/Container";
 
 export function Hero() {
+  const tHome = useTranslations("Home.hero");
+  const tSite = useTranslations("Site");
+
   return (
     <section className="section-spacing pt-14 md:pt-20">
       <Container className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
         <div className="flex flex-col gap-8 animate-fade-up">
           <span className="inline-flex w-fit items-center rounded-full border border-cyan/20 bg-cyan-soft px-4 py-2 text-xs font-semibold uppercase tracking-[0.26em] text-cyan">
-            {siteConfig.role}
+            {tHome("eyebrow")}
           </span>
 
           <div className="space-y-6">
             <h1 className="max-w-4xl font-display text-5xl font-semibold tracking-tight text-foreground sm:text-6xl xl:text-7xl">
-              {siteConfig.name.split(" ")[0]} construindo produtos{" "}
-              <span className="text-gradient">web e mobile</span> com performance,
-              UX e boa arquitetura.
+              {tHome("title", { firstName: siteConfig.name.split(" ")[0] })}
             </h1>
             <p className="max-w-2xl text-lg leading-8 text-muted-foreground sm:text-xl">
-              {siteConfig.heroDescription}
+              {tSite("heroDescription")}
             </p>
           </div>
 
           <div className="flex flex-col gap-4 sm:flex-row">
             <Button href="/projects" size="lg">
-              Ver projetos
+              {tHome("projectsButton")}
             </Button>
             <Button href="/contact" size="lg" variant="secondary">
-              Iniciar conversa
+              {tHome("contactButton")}
             </Button>
           </div>
 
           <div className="flex flex-wrap gap-3 text-sm text-muted-foreground">
-            {siteConfig.focusAreas.map((item) => (
+            {siteConfig.focusAreaKeys.map((item) => (
               <span
                 key={item}
                 className="rounded-full border border-line bg-surface px-4 py-2"
               >
-                {item}
+                {tSite(`focusAreas.${item}`)}
               </span>
             ))}
           </div>
 
           <div className="grid gap-4 sm:grid-cols-3">
-            {siteConfig.stats.map((stat) => (
-              <Card key={stat.label} className="p-5">
+            {(["experience", "payments", "companies"] as const).map((statKey) => (
+              <Card key={statKey} className="p-5">
                 <p className="font-display text-3xl font-semibold text-foreground">
-                  {stat.value}
+                  {tSite(`stats.${statKey}.value`)}
                 </p>
                 <p className="mt-2 text-sm leading-6 text-muted-foreground">
-                  {stat.label}
+                  {tSite(`stats.${statKey}.label`)}
                 </p>
               </Card>
             ))}
@@ -68,16 +70,16 @@ export function Hero() {
               <div className="flex items-center justify-between gap-4 rounded-3xl border border-line/70 bg-background/45 px-4 py-3">
                 <div>
                   <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
-                    Disponibilidade
+                    {tHome("availabilityLabel")}
                   </p>
-                  <p className="mt-1 text-sm text-foreground">{siteConfig.availability}</p>
+                  <p className="mt-1 text-sm text-foreground">{tSite("availability")}</p>
                 </div>
                 <span className="h-3 w-3 rounded-full bg-cyan shadow-[0_0_20px_rgba(86,216,255,0.8)]" />
               </div>
 
               <Image
                 src="/profile-workspace.svg"
-                alt="Ilustração abstrata de ambiente de trabalho e desenvolvimento"
+                alt={tHome("imageAlt")}
                 width={900}
                 height={900}
                 priority
@@ -87,18 +89,18 @@ export function Hero() {
               <div className="grid gap-4 sm:grid-cols-2">
                 <div className="rounded-3xl border border-line/70 bg-background/45 p-4">
                   <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
-                    Especialidades
+                    {tHome("specialtiesLabel")}
                   </p>
                   <p className="mt-2 text-sm leading-7 text-foreground">
-                    {siteConfig.specialties}
+                    {tSite("specialties")}
                   </p>
                 </div>
                 <div className="rounded-3xl border border-line/70 bg-background/45 p-4">
                   <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
-                    Foco atual
+                    {tHome("currentFocusLabel")}
                   </p>
                   <p className="mt-2 text-sm leading-7 text-foreground">
-                    {siteConfig.currentFocus}
+                    {tSite("currentFocus")}
                   </p>
                 </div>
               </div>

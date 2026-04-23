@@ -1,3 +1,4 @@
+import { useTranslations } from "next-intl";
 import type { Project } from "@/types/project";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/Button";
@@ -8,6 +9,9 @@ type ProjectCardProps = {
 };
 
 export function ProjectCard({ project }: ProjectCardProps) {
+  const tProject = useTranslations("ProjectsData");
+  const tCommon = useTranslations("Common");
+
   return (
     <Card
       interactive
@@ -19,30 +23,32 @@ export function ProjectCard({ project }: ProjectCardProps) {
       <div className="space-y-4">
         <div className="flex flex-wrap items-center gap-3">
           <span className="rounded-full border border-cyan/20 bg-cyan-soft px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-cyan">
-            {project.category}
+            {tProject(`${project.id}.category`)}
           </span>
           {project.featured ? (
             <span className="rounded-full border border-accent/20 bg-accent-soft px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-accent">
-              Destaque
+              {tCommon("featured")}
             </span>
           ) : null}
         </div>
 
         <div className="space-y-3">
           <h3 className="font-display text-2xl font-semibold text-foreground">
-            {project.name}
+            {tProject(`${project.id}.name`)}
           </h3>
           <p className="text-sm leading-7 text-muted-foreground sm:text-base">
-            {project.description}
+            {tProject(`${project.id}.description`)}
           </p>
         </div>
       </div>
 
       <div className="rounded-3xl border border-line/70 bg-background/40 p-4">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
-          Impacto
+          {tCommon("impact")}
         </p>
-        <p className="mt-2 text-sm leading-7 text-foreground">{project.impact}</p>
+        <p className="mt-2 text-sm leading-7 text-foreground">
+          {tProject(`${project.id}.impact`)}
+        </p>
       </div>
 
       <div className="flex flex-wrap gap-2">
@@ -57,19 +63,15 @@ export function ProjectCard({ project }: ProjectCardProps) {
       </div>
 
       <div className="mt-auto flex flex-wrap gap-3 pt-2">
-        {project.demoUrl ? (
-          <Button href={project.demoUrl} size="sm">
-            Ver demo
-          </Button>
-        ) : null}
+        {project.demoUrl ? <Button href={project.demoUrl} size="sm">Demo</Button> : null}
         {project.githubUrl ? (
           <Button href={project.githubUrl} size="sm" variant="secondary">
-            Ver GitHub
+            GitHub
           </Button>
         ) : null}
-        {project.visibilityNote ? (
+        {!project.demoUrl && !project.githubUrl ? (
           <p className="w-full text-sm leading-7 text-muted-foreground">
-            {project.visibilityNote}
+            {tProject(`${project.id}.visibilityNote`)}
           </p>
         ) : null}
       </div>

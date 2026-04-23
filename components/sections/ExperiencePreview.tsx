@@ -1,3 +1,4 @@
+import { useTranslations } from "next-intl";
 import { experiences } from "@/data/experience";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
@@ -5,17 +6,21 @@ import { Container } from "@/components/ui/Container";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 
 export function ExperiencePreview() {
+  const tHome = useTranslations("Home.experiencePreview");
+  const tCommon = useTranslations("Common");
+  const tExperience = useTranslations("ExperiencesData");
+
   return (
     <section className="section-spacing">
       <Container className="space-y-14">
         <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
           <SectionTitle
-            eyebrow="Experiência"
-            title="Trajetória construída em produtos de alta exigência técnica."
-            description="Minha experiência combina ritmo de startup, consistência de produto B2B e responsabilidade sobre fluxos críticos como pagamentos, analytics e operações em tempo real."
+            eyebrow={tHome("eyebrow")}
+            title={tHome("title")}
+            description={tHome("description")}
           />
           <Button href="/experience" variant="secondary">
-            Ver experiência completa
+            {tCommon("viewFullExperience")}
           </Button>
         </div>
 
@@ -28,20 +33,22 @@ export function ExperiencePreview() {
                     {experience.period}
                   </p>
                   <h3 className="font-display text-2xl font-semibold text-foreground">
-                    {experience.role}
+                    {tExperience(`${experience.id}.role`)}
                   </h3>
                   <p className="text-base text-muted-foreground">{experience.company}</p>
                 </div>
 
                 <p className="text-sm leading-7 text-muted-foreground sm:text-base">
-                  {experience.description}
+                  {tExperience(`${experience.id}.description`)}
                 </p>
 
                 <div className="space-y-3">
-                  {experience.outcomes.map((outcome) => (
-                    <div key={outcome} className="flex gap-3">
+                  {experience.outcomeKeys.map((outcomeKey) => (
+                    <div key={outcomeKey} className="flex gap-3">
                       <span className="mt-2 h-2.5 w-2.5 rounded-full bg-accent" />
-                      <p className="text-sm leading-7 text-foreground">{outcome}</p>
+                      <p className="text-sm leading-7 text-foreground">
+                        {tExperience(`${experience.id}.outcomes.${outcomeKey}`)}
+                      </p>
                     </div>
                   ))}
                 </div>

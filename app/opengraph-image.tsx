@@ -9,6 +9,11 @@ export const size = {
 export const contentType = "image/png";
 
 export default function OpenGraphImage() {
+  const subtitle = "Full Stack Developer";
+  const headline = "Produtos digitais escalaveis com foco em performance e impacto real.";
+  const description =
+    "React, React Native, Angular, Node.js e experiencias digitais para produtos financeiros e plataformas complexas.";
+
   return new ImageResponse(
     (
       <div
@@ -47,7 +52,7 @@ export default function OpenGraphImage() {
               color: "#56d8ff",
             }}
           >
-            CN
+            {siteConfig.initials}
           </div>
           <div
             style={{
@@ -57,7 +62,7 @@ export default function OpenGraphImage() {
             }}
           >
             <div style={{ fontSize: "28px", fontWeight: 700 }}>{siteConfig.name}</div>
-            <div style={{ fontSize: "20px", color: "#98a7bc" }}>{siteConfig.role}</div>
+            <div style={{ fontSize: "20px", color: "#98a7bc" }}>{subtitle}</div>
           </div>
         </div>
 
@@ -87,7 +92,7 @@ export default function OpenGraphImage() {
               fontWeight: 700,
             }}
           >
-            Produtos digitais escalaveis com foco em performance e impacto real.
+            {headline}
           </div>
           <div
             style={{
@@ -96,7 +101,7 @@ export default function OpenGraphImage() {
               color: "#98a7bc",
             }}
           >
-            {siteConfig.description}
+            {description}
           </div>
         </div>
 

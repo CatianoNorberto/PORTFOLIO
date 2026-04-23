@@ -12,7 +12,7 @@ export async function POST(request: Request) {
     payload = (await request.json()) as Partial<ContactPayload>;
   } catch {
     return NextResponse.json(
-      { message: "Payload invalido. Verifique os dados enviados." },
+      { error: "invalid_payload" },
       { status: 400 }
     );
   }
@@ -30,7 +30,7 @@ export async function POST(request: Request) {
     !isValidEmail(contactData.email)
   ) {
     return NextResponse.json(
-      { message: "Preencha nome, email valido e mensagem antes de enviar." },
+      { error: "invalid_contact_data" },
       { status: 400 }
     );
   }
@@ -41,7 +41,5 @@ export async function POST(request: Request) {
     messagePreview: contactData.message.slice(0, 120),
   });
 
-  return NextResponse.json({
-    message: "Mensagem recebida com sucesso.",
-  });
+  return NextResponse.json({ success: true });
 }

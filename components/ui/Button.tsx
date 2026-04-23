@@ -1,10 +1,9 @@
-import type { Route } from "next";
-import Link from "next/link";
 import type {
   AnchorHTMLAttributes,
   ButtonHTMLAttributes,
   ReactNode,
 } from "react";
+import { Link } from "@/i18n/navigation";
 import { cn, isExternalLink } from "@/lib/utils";
 
 const baseStyles =
@@ -79,7 +78,7 @@ export function Button(props: ButtonProps) {
     }
 
     return (
-      <Link href={href as Route} {...linkProps} className={resolvedClassName}>
+      <Link href={href as never} {...linkProps} className={resolvedClassName}>
         {children}
       </Link>
     );

@@ -1,56 +1,62 @@
 import type { Metadata } from "next";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { projects } from "@/data/projects";
 import { createPageMetadata } from "@/lib/metadata";
+import type { AppLocale } from "@/i18n/routing";
 import { ProjectCard } from "@/components/ProjectCard";
 import { Card } from "@/components/ui/Card";
 import { Container } from "@/components/ui/Container";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 
-export const metadata: Metadata = createPageMetadata({
-  title: "Projetos",
-  description:
-    "Portfólio de projetos com foco em pagamentos, performance, SaaS e soluções full stack com impacto mensurável.",
-  path: "/projects",
-  keywords: ["projetos next.js", "portfolio full stack", "pagamentos"],
-});
+type ProjectsPageProps = PageProps<"/[locale]/projects">;
 
-const projectPillars = [
-  "Produtos financeiros e pagamentos",
-  "Plataformas web com experiência interativa",
-  "Projetos corporativos proprietários",
-];
+export async function generateMetadata({
+  params,
+}: ProjectsPageProps): Promise<Metadata> {
+  const { locale } = await params;
 
-export default function ProjectsPage() {
+  return createPageMetadata({
+    locale: locale as AppLocale,
+    pathname: "/projects",
+    namespace: "Metadata.pages.projects",
+  });
+}
+
+export default async function ProjectsPage({ params }: ProjectsPageProps) {
+  const { locale } = await params;
+
+  setRequestLocale(locale as AppLocale);
+
+  const t = await getTranslations({ locale, namespace: "ProjectsPage" });
+
   return (
     <Container className="section-spacing space-y-14">
       <SectionTitle
-        eyebrow="Projetos"
-        title="Soluções construídas para resolver problemas reais e mensuráveis."
-        description="Cada projeto desta seleção foi pensado para destacar impacto de negócio, clareza de arquitetura e consistência de experiência do usuário."
+        eyebrow={t("hero.eyebrow")}
+        title={t("hero.title")}
+        description={t("hero.description")}
       />
 
       <Card className="grid gap-6 p-6 sm:grid-cols-[1.15fr_0.85fr] sm:p-8">
         <div className="space-y-4">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-cyan">
-            Direção de portfólio
+            {t("portfolioDirectionLabel")}
           </p>
           <h2 className="font-display text-3xl font-semibold text-foreground">
-            Projetos que evidenciam profundidade técnica e leitura de produto.
+            {t("portfolioDirectionTitle")}
           </h2>
           <p className="text-sm leading-7 text-muted-foreground sm:text-base">
-            Aqui estão entregas baseadas na minha experiência profissional real.
-            Parte desse trabalho foi construída em ambiente corporativo, então alguns
-            projetos não possuem links públicos de demo ou repositório.
+            {t("portfolioDirectionDescription")}
           </p>
         </div>
 
         <div className="flex flex-wrap gap-3">
-          {projectPillars.map((pillar) => (
+          {(["finance", "interactive", "private"] as const).map((pillarKey) => (
             <span
-              key={pillar}
+              key={pillarKey}
               className="inline-flex h-fit rounded-full border border-line bg-background/45 px-4 py-2 text-sm text-foreground"
             >
-              {pillar}
+              {t(`pillars.${pillarKey}`)}
             </span>
           ))}
         </div>

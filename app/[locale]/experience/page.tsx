@@ -1,25 +1,42 @@
 import type { Metadata } from "next";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { experiences } from "@/data/experience";
 import { createPageMetadata } from "@/lib/metadata";
+import type { AppLocale } from "@/i18n/routing";
 import { Card } from "@/components/ui/Card";
 import { Container } from "@/components/ui/Container";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 
-export const metadata: Metadata = createPageMetadata({
-  title: "Experiência",
-  description:
-    "Experiência profissional em produtos digitais, plataformas de pagamento, dashboards SaaS e times orientados por performance.",
-  path: "/experience",
-  keywords: ["experiencia desenvolvedor full stack", "pagamentos", "node.js"],
-});
+type ExperiencePageProps = PageProps<"/[locale]/experience">;
 
-export default function ExperiencePage() {
+export async function generateMetadata({
+  params,
+}: ExperiencePageProps): Promise<Metadata> {
+  const { locale } = await params;
+
+  return createPageMetadata({
+    locale: locale as AppLocale,
+    pathname: "/experience",
+    namespace: "Metadata.pages.experience",
+  });
+}
+
+export default async function ExperiencePage({ params }: ExperiencePageProps) {
+  const { locale } = await params;
+
+  setRequestLocale(locale as AppLocale);
+
+  const [tPage, tExperience] = await Promise.all([
+    getTranslations({ locale, namespace: "ExperiencePage" }),
+    getTranslations({ locale, namespace: "ExperiencesData" }),
+  ]);
+
   return (
     <Container className="section-spacing space-y-14">
       <SectionTitle
-        eyebrow="Experiência"
-        title="Construindo software de alta responsabilidade em diferentes contextos de produto."
-        description="Minha trajetória passa por fintech, SaaS e consultoria, sempre com atuação próxima de engenharia, design e negócio para transformar requisitos complexos em entregas consistentes."
+        eyebrow={tPage("hero.eyebrow")}
+        title={tPage("hero.title")}
+        description={tPage("hero.description")}
       />
 
       <div className="relative space-y-6 before:absolute before:bottom-0 before:left-5 before:top-0 before:w-px before:bg-line sm:before:left-7">
@@ -36,21 +53,23 @@ export default function ExperiencePage() {
                     {experience.period}
                   </p>
                   <h2 className="font-display text-2xl font-semibold text-foreground">
-                    {experience.role}
+                    {tExperience(`${experience.id}.role`)}
                   </h2>
                   <p className="text-base text-muted-foreground">{experience.company}</p>
                 </div>
 
                 <div className="space-y-5">
                   <p className="text-sm leading-7 text-muted-foreground sm:text-base">
-                    {experience.description}
+                    {tExperience(`${experience.id}.description`)}
                   </p>
 
                   <div className="space-y-3">
-                    {experience.outcomes.map((outcome) => (
-                      <div key={outcome} className="flex gap-3">
+                    {experience.outcomeKeys.map((outcomeKey) => (
+                      <div key={outcomeKey} className="flex gap-3">
                         <span className="mt-2 h-2.5 w-2.5 rounded-full bg-cyan" />
-                        <p className="text-sm leading-7 text-foreground">{outcome}</p>
+                        <p className="text-sm leading-7 text-foreground">
+                          {tExperience(`${experience.id}.outcomes.${outcomeKey}`)}
+                        </p>
                       </div>
                     ))}
                   </div>

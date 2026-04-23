@@ -1,13 +1,14 @@
 # Portfolio Profissional
 
-Portfólio profissional construído com Next.js App Router, TypeScript e Tailwind CSS, pronto para deploy na Vercel.
+Portfolio profissional construido com Next.js App Router, TypeScript e Tailwind CSS, pronto para deploy na Vercel.
 
 ## Stack
 
 - Next.js 16 com App Router
 - TypeScript
 - Tailwind CSS 4
-- Route Handlers para API mockada de contato
+- `next-intl` para `pt`, `en` e `es`
+- Route Handlers para API de contato
 
 ## Estrutura
 
@@ -16,19 +17,23 @@ app/
 components/
 components/ui/
 components/sections/
-lib/
-types/
 data/
+i18n/
+lib/
+messages/
 public/
+types/
 ```
 
-## Páginas
+## Paginas
 
 - `/`
 - `/about`
 - `/projects`
 - `/experience`
 - `/contact`
+- `/en`
+- `/es`
 
 ## Como rodar
 
@@ -47,4 +52,4 @@ npm run build
 
 ## Deploy
 
-O projeto está preparado para deploy direto na Vercel com as configurações padrão do Next.js.
+O projeto esta preparado para deploy direto na Vercel com as configuracoes padrao do Next.js.

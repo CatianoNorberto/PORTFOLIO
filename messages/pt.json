@@ -1,0 +1,282 @@
+{
+  "Metadata": {
+    "layoutDescription": "Portfólio profissional de Catiano Norberto Ermelinda, desenvolvedor full stack com experiência em React, React Native, Angular, TypeScript e Node.js, com atuação em produtos financeiros e plataformas complexas.",
+    "pages": {
+      "home": {
+        "title": "Início",
+        "description": "Portfólio multilíngue de Catiano Norberto Ermelinda com foco em aplicações web e mobile, performance, UX e engenharia full stack."
+      },
+      "about": {
+        "title": "Sobre",
+        "description": "Conheça a trajetória, as tecnologias e a forma de trabalho de Catiano Norberto Ermelinda no desenvolvimento full stack."
+      },
+      "projects": {
+        "title": "Projetos",
+        "description": "Projetos profissionais com foco em pagamentos, produtos web e mobile, experiência interativa e arquitetura full stack."
+      },
+      "experience": {
+        "title": "Experiência",
+        "description": "Experiência profissional de Catiano Norberto Ermelinda em produtos financeiros, aplicações mobile, APIs e times de produto."
+      },
+      "contact": {
+        "title": "Contato",
+        "description": "Entre em contato com Catiano Norberto Ermelinda para conversar sobre oportunidades, projetos ou desafios técnicos."
+      }
+    }
+  },
+  "Site": {
+    "role": "Desenvolvedor Fullstack Pleno",
+    "location": "São Paulo - SP",
+    "availability": "Baseado em São Paulo - SP, com atuação em produtos web e mobile e abertura para conversar sobre oportunidades e projetos.",
+    "headline": "Desenvolvedor Fullstack Pleno com mais de 5 anos de experiência no desenvolvimento de aplicações web e mobile, atuando do frontend ao backend.",
+    "heroDescription": "Experiência sólida com React, React Native, Angular, TypeScript e Node.js, construindo produtos financeiros e plataformas complexas com foco em boas práticas, performance e experiência do usuário.",
+    "specialties": "Frontend responsivo, apps mobile, APIs em Node.js, fluxos de pagamento, integrações e arquitetura orientada a performance.",
+    "currentFocus": "Produtos financeiros, aplicações web e mobile, integrações assíncronas e evolução contínua de UX.",
+    "focusAreas": {
+      "react": "React",
+      "reactNative": "React Native",
+      "node": "Node.js",
+      "payments": "Pagamentos",
+      "angular": "Angular",
+      "aws": "AWS"
+    },
+    "stats": {
+      "experience": {
+        "value": "5+",
+        "label": "anos desenvolvendo aplicações web e mobile"
+      },
+      "payments": {
+        "value": "2-4s",
+        "label": "tempo final do fluxo de pagamentos após otimização"
+      },
+      "companies": {
+        "value": "3",
+        "label": "empresas com atuação em produtos e plataformas complexas"
+      }
+    },
+    "principles": {
+      "quality": "Qualidade de código e boas práticas como base para evolução sustentável do produto.",
+      "performance": "Performance e resiliência tratadas como responsabilidade da implementação, não como detalhe final.",
+      "ux": "UX clara e interfaces responsivas como parte central da entrega técnica."
+    },
+    "education": {
+      "degree": "Engenharia da Computação (trancado)",
+      "institution": "Universidade Paulista (UNIP)",
+      "period": "2021 - 2025"
+    },
+    "languages": {
+      "pt": "Português (Nativo)",
+      "en": "Inglês (Intermediário)",
+      "es": "Espanhol (Básico)"
+    }
+  },
+  "Navigation": {
+    "home": "Início",
+    "about": "Sobre",
+    "projects": "Projetos",
+    "experience": "Experiência",
+    "contact": "Contato"
+  },
+  "Common": {
+    "talkToMe": "Vamos conversar",
+    "contactMe": "Fale comigo",
+    "menu": "Menu",
+    "close": "Fechar",
+    "themeToggle": "Alternar tema",
+    "languageSwitcher": "Trocar idioma",
+    "featured": "Destaque",
+    "impact": "Impacto",
+    "availability": "Disponibilidade",
+    "email": "Email",
+    "phoneWhatsapp": "Telefone / WhatsApp",
+    "digitalPresence": "Presença digital",
+    "openContact": "Abrir contato",
+    "directCall": "Tentar ligação direta",
+    "contactForm": "Formulário de contato",
+    "viewAllProjects": "Ver todos os projetos",
+    "viewFullExperience": "Ver experiência completa",
+    "sendMessage": "Enviar mensagem",
+    "sending": "Enviando...",
+    "portfolioReady": "Portfólio pronto para deploy na Vercel",
+    "localeNames": {
+      "pt": "Português",
+      "en": "English",
+      "es": "Español"
+    }
+  },
+  "Home": {
+    "hero": {
+      "eyebrow": "Desenvolvedor Fullstack Pleno",
+      "title": "{firstName} construindo produtos web e mobile com performance, UX e boa arquitetura.",
+      "projectsButton": "Ver projetos",
+      "contactButton": "Iniciar conversa",
+      "availabilityLabel": "Disponibilidade",
+      "specialtiesLabel": "Especialidades",
+      "currentFocusLabel": "Foco atual",
+      "imageAlt": "Ilustração abstrata de ambiente de trabalho e desenvolvimento"
+    },
+    "skills": {
+      "eyebrow": "Tecnologias",
+      "title": "Stack completa para construir, evoluir e escalar produtos digitais.",
+      "description": "Combino front-end moderno, back-end robusto e visão de produto para entregar interfaces rápidas, integrações seguras e arquitetura sustentável."
+    },
+    "featuredProjects": {
+      "eyebrow": "Projetos em destaque",
+      "title": "Casos com impacto real em receita, operação e experiência.",
+      "description": "Selecionei projetos que mostram capacidade de execução ponta a ponta: UX, arquitetura, integrações críticas e leitura de indicadores para tomada de decisão."
+    },
+    "experiencePreview": {
+      "eyebrow": "Experiência",
+      "title": "Trajetória construída em produtos de alta exigência técnica.",
+      "description": "Minha experiência combina ritmo de produto, responsabilidade técnica e atuação em fluxos críticos como pagamentos, web, mobile e integrações."
+    },
+    "contactCta": {
+      "eyebrow": "Vamos construir algo forte",
+      "title": "Se você precisa elevar produto, performance ou confiabilidade, vamos conversar.",
+      "description": "Posso colaborar em novos produtos, evolução de plataformas existentes ou iniciativas de modernização."
+    }
+  },
+  "SkillsData": {
+    "frontendMobile": {
+      "title": "Frontend & Mobile",
+      "description": "Interfaces responsivas e experiências mobile construídas com foco em UX, performance e reutilização."
+    },
+    "backendApis": {
+      "title": "Backend & APIs",
+      "description": "Construção de APIs e regras de negócio com foco em padronização, autenticação e evolução contínua."
+    },
+    "dataCloud": {
+      "title": "Banco de Dados & Cloud",
+      "description": "Persistência, mensageria e infraestrutura utilizadas em produtos financeiros e fluxos assíncronos."
+    },
+    "qualityFlow": {
+      "title": "Qualidade & Fluxo",
+      "description": "Ferramentas e práticas para manter qualidade, colaboração e entregas consistentes em times ágeis."
+    }
+  },
+  "ProjectsData": {
+    "keeperAppBanking": {
+      "category": "Fintech / Banking App",
+      "name": "KeeperApp Banking",
+      "description": "Aplicação web e mobile desenvolvida do zero para operações bancárias, com pagamentos via PIX, transferências, gestão de faturas e camadas de segurança.",
+      "impact": "A migração do fluxo de pagamento de síncrono para assíncrono reduziu o processamento de cerca de 10-12 segundos para 2-4 segundos, com ganho de resiliência e redução de custo de CPU.",
+      "visibilityNote": "Projeto proprietário sem links públicos."
+    },
+    "tableReservationPlatform": {
+      "category": "Eventos / Experiência Interativa",
+      "name": "Plataforma de Reserva de Mesas",
+      "description": "Plataforma web para reserva de mesas em eventos com mapa interativo em canvas, autenticação, perfis de acesso e integração com APIs.",
+      "impact": "Entregou uma experiência visual de reserva com operação por perfis distintos de admin, usuário e hostess em uma interface responsiva.",
+      "visibilityNote": "Projeto proprietário sem links públicos."
+    },
+    "firgunProducts": {
+      "category": "Produtos Digitais",
+      "name": "Produtos Web e Mobile na Firgun",
+      "description": "Desenvolvimento full stack de aplicações web e mobile com React, React Native e APIs REST em Node.js e Express, cobrindo regras de negócio, autenticação e integrações.",
+      "impact": "Atuação contínua em evolução de produto, correções, refinamentos técnicos e integrações com banco de dados em times ágeis.",
+      "visibilityNote": "Projetos corporativos desenvolvidos em contexto privado."
+    },
+    "mezaInterfaces": {
+      "category": "Frontend / UX",
+      "name": "Interfaces Web no Grupo Meza",
+      "description": "Criação de interfaces web responsivas e componentes reutilizáveis com React, a partir de layouts no Figma e integração com APIs.",
+      "impact": "Melhorou a consistência visual e a experiência do usuário enquanto evoluía funcionalidades existentes com foco em UX e performance.",
+      "visibilityNote": "Projeto profissional sem demonstração pública."
+    }
+  },
+  "ExperiencesData": {
+    "delta": {
+      "role": "Desenvolvedor Fullstack Pleno",
+      "description": "Desenvolvimento de aplicações web e mobile com React, React Native, Angular e TypeScript, com foco em interfaces responsivas, UX e produtos financeiros.",
+      "outcomes": {
+        "bankingApp": "Desenvolvi o KeeperAppBanking do zero, incluindo PIX, transferências, gestão de faturas e camadas de segurança.",
+        "backend": "Construí o backend do zero com Node.js, PostgreSQL e TSOA para documentação e padronização da API.",
+        "aws": "Arquitetei integrações em AWS com SNS, SQS, Lambda, RDS, Aurora e S3.",
+        "asyncPayments": "Migrei o fluxo de pagamento de síncrono (~10-12s) para assíncrono (~2-4s), aumentando resiliência e melhorando performance."
+      }
+    },
+    "firgun": {
+      "role": "Desenvolvedor Fullstack",
+      "description": "Desenvolvimento de aplicações web e mobile com React e React Native, além da criação e manutenção de APIs REST com Node.js e Express.",
+      "outcomes": {
+        "businessRules": "Implementei regras de negócio, integrações com banco de dados e autenticação.",
+        "refinement": "Participei de refinamentos técnicos, correções de bugs e evolução contínua do produto.",
+        "agileDelivery": "Atuei em times ágeis com versionamento de código e entregas contínuas."
+      }
+    },
+    "meza": {
+      "role": "Desenvolvedor Frontend",
+      "description": "Criação de interfaces web responsivas e componentes reutilizáveis com React, integrando layouts do Figma com APIs e evoluindo funcionalidades existentes.",
+      "outcomes": {
+        "figma": "Implementei layouts a partir de Figma com foco em consistência visual e boa experiência de uso.",
+        "uxPerformance": "Mantive e evoluí funcionalidades existentes com atenção a UX e performance.",
+        "collaboration": "Colaborei com designers e backend na entrega de novas features."
+      }
+    }
+  },
+  "About": {
+    "hero": {
+      "eyebrow": "Sobre mim",
+      "title": "Experiência full stack aplicada a produtos web, mobile e cenários financeiros.",
+      "description": "Atuo do frontend ao backend em aplicações web e mobile, com foco em qualidade de código, performance, UX e boas práticas. Minha trajetória combina interfaces modernas, APIs robustas e evolução constante de produto.",
+      "imageAlt": "Ilustração profissional representando desenvolvimento full stack"
+    },
+    "principles": {
+      "eyebrow": "Como eu trabalho",
+      "title": "Princípios que guiam minhas decisões técnicas.",
+      "description": "Meu currículo mostra uma atuação prática em entregas reais. Estes são os pilares que mais se repetem no meu jeito de construir software."
+    },
+    "stack": {
+      "eyebrow": "Stack em profundidade",
+      "title": "Tecnologias e contextos em que atuo com mais recorrência.",
+      "description": "Minha atuação passa por frontend, mobile, backend, APIs, bancos de dados e cloud, sempre conectando implementação com boa experiência de uso."
+    },
+    "educationLabel": "Formação acadêmica",
+    "languagesToolsLabel": "Idiomas & Ferramentas",
+    "languagesLabel": "Idiomas",
+    "toolsLabel": "Ferramentas"
+  },
+  "ProjectsPage": {
+    "hero": {
+      "eyebrow": "Projetos",
+      "title": "Soluções construídas para resolver problemas reais e mensuráveis.",
+      "description": "Cada projeto desta seleção foi pensado para destacar impacto de negócio, clareza de arquitetura e consistência de experiência do usuário."
+    },
+    "portfolioDirectionLabel": "Direção de portfólio",
+    "portfolioDirectionTitle": "Projetos que evidenciam profundidade técnica e leitura de produto.",
+    "portfolioDirectionDescription": "Aqui estão entregas baseadas na minha experiência profissional real. Parte desse trabalho foi construída em ambiente corporativo, então alguns projetos não possuem links públicos de demo ou repositório.",
+    "pillars": {
+      "finance": "Produtos financeiros e pagamentos",
+      "interactive": "Plataformas web com experiência interativa",
+      "private": "Projetos corporativos proprietários"
+    }
+  },
+  "ExperiencePage": {
+    "hero": {
+      "eyebrow": "Experiência",
+      "title": "Construindo software de alta responsabilidade em diferentes contextos de produto.",
+      "description": "Minha trajetória passa por fintech, produtos digitais e times multidisciplinares, sempre com atuação próxima de engenharia, design e negócio para transformar requisitos complexos em entregas consistentes."
+    }
+  },
+  "ContactPage": {
+    "hero": {
+      "eyebrow": "Contato",
+      "title": "Vamos falar sobre produto, arquitetura ou a próxima entrega importante do seu time.",
+      "description": "Se você busca apoio para estruturar um novo produto, elevar performance ou destravar uma iniciativa crítica, este é um bom ponto de partida."
+    },
+    "formTitle": "Me conte o contexto e a prioridade.",
+    "formDescription": "O formulário já valida e recebe os dados no backend. Para entrega real no seu email ainda seria preciso conectar um provedor como SMTP, Resend ou Formspree."
+  },
+  "ContactForm": {
+    "nameLabel": "Nome",
+    "emailLabel": "Email",
+    "messageLabel": "Mensagem",
+    "namePlaceholder": "Seu nome",
+    "emailPlaceholder": "voce@empresa.com",
+    "messagePlaceholder": "Conte um pouco sobre o projeto, contexto ou oportunidade.",
+    "directEmailPrefix": "Se preferir, envie direto para",
+    "success": "Mensagem recebida com sucesso.",
+    "sendError": "Não foi possível enviar a mensagem.",
+    "genericError": "Ocorreu um erro ao enviar sua mensagem."
+  }
+}

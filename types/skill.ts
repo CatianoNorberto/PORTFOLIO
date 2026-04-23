@@ -1,5 +1,10 @@
+export type SkillGroupId =
+  | "frontendMobile"
+  | "backendApis"
+  | "dataCloud"
+  | "qualityFlow";
+
 export type SkillGroup = {
-  title: string;
-  description: string;
+  id: SkillGroupId;
   items: string[];
 };

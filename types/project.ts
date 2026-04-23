@@ -1,12 +1,14 @@
+export type ProjectId =
+  | "keeperAppBanking"
+  | "tableReservationPlatform"
+  | "firgunProducts"
+  | "mezaInterfaces";
+
 export type Project = {
+  id: ProjectId;
   slug: string;
-  name: string;
-  category: string;
-  description: string;
-  impact: string;
   technologies: string[];
   githubUrl?: string;
   demoUrl?: string;
-  visibilityNote?: string;
   featured?: boolean;
 };

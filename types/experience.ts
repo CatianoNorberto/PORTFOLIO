@@ -1,8 +1,9 @@
+export type ExperienceId = "delta" | "firgun" | "meza";
+
 export type Experience = {
+  id: ExperienceId;
   company: string;
-  role: string;
   period: string;
-  description: string;
-  outcomes: string[];
+  outcomeKeys: string[];
   stack: string[];
 };

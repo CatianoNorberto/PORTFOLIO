@@ -2,9 +2,7 @@ import type { SkillGroup } from "@/types/skill";
 
 export const skillGroups: SkillGroup[] = [
   {
-    title: "Frontend & Mobile",
-    description:
-      "Interfaces responsivas e experiências mobile construídas com foco em UX, performance e reutilização.",
+    id: "frontendMobile",
     items: [
       "React",
       "React Native",
@@ -18,15 +16,11 @@ export const skillGroups: SkillGroup[] = [
     ],
   },
   {
-    title: "Backend & APIs",
-    description:
-      "Construção de APIs e regras de negócio com foco em padronização, autenticação e evolução contínua.",
+    id: "backendApis",
     items: ["Node.js", "Express", "Fastify", "TSOA", "REST APIs", "Autenticação"],
   },
   {
-    title: "Banco de Dados & Cloud",
-    description:
-      "Persistência, mensageria e infraestrutura utilizadas em produtos financeiros e fluxos assíncronos.",
+    id: "dataCloud",
     items: [
       "PostgreSQL",
       "MySQL",
@@ -40,9 +34,7 @@ export const skillGroups: SkillGroup[] = [
     ],
   },
   {
-    title: "Qualidade & Fluxo",
-    description:
-      "Ferramentas e práticas para manter qualidade, colaboração e entregas consistentes em times ágeis.",
+    id: "qualityFlow",
     items: ["Jest", "Git", "GitHub", "Bitbucket", "Jira", "Trello", "Figma"],
   },
 ];
