@@ -27,20 +27,20 @@ export function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-line/70 bg-background/80 backdrop-blur-xl">
-      <Container className="flex h-20 items-center justify-between gap-4">
+      <Container className="flex h-20 max-w-[90rem] items-center justify-between gap-4 xl:gap-6">
         <Link href="/" className="group flex items-center gap-3">
           <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-cyan/25 bg-cyan-soft text-sm font-bold text-cyan transition-transform duration-300 group-hover:-translate-y-0.5">
             {siteConfig.initials}
           </div>
           <div className="hidden sm:block">
             <p className="font-display text-sm font-semibold tracking-[0.18em] text-foreground uppercase">
-              {siteConfig.name}
+              {siteConfig.displayName}
             </p>
             <p className="text-xs text-muted-foreground">{tSite("role")}</p>
           </div>
         </Link>
 
-        <nav className="hidden items-center gap-2 lg:flex">
+        <nav className="hidden items-center gap-1 xl:gap-2 lg:flex">
           {navigationItems.map((item) => {
             const current = isCurrentPath(pathname, item.href);
 

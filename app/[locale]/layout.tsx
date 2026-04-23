@@ -1,29 +1,12 @@
 import type { Metadata, Viewport } from "next";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
-import Script from "next/script";
 import { notFound } from "next/navigation";
 import { Footer } from "@/components/Footer";
 import { Navbar } from "@/components/Navbar";
 import { routing, type AppLocale } from "@/i18n/routing";
 import { createLocaleMetadata } from "@/lib/metadata";
 import "../globals.css";
-
-const themeScript = `
-  (() => {
-    try {
-      const storedTheme = localStorage.getItem("portfolio-theme");
-      const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-      const resolvedTheme = storedTheme ?? (systemDark ? "dark" : "light");
-
-      document.documentElement.classList.toggle("dark", resolvedTheme === "dark");
-      document.documentElement.style.colorScheme = resolvedTheme;
-    } catch (error) {
-      document.documentElement.classList.add("dark");
-      document.documentElement.style.colorScheme = "dark";
-    }
-  })();
-`;
 
 type LocaleLayoutProps = {
   children: React.ReactNode;
@@ -72,9 +55,6 @@ export default async function LocaleLayout({
       className="dark h-full antialiased"
     >
       <body suppressHydrationWarning className="min-h-full">
-        <Script id="theme-init" strategy="beforeInteractive">
-          {themeScript}
-        </Script>
         <NextIntlClientProvider>
           <div className="relative flex min-h-screen flex-col overflow-x-hidden">
             <div

@@ -1,5 +1,6 @@
 export const siteConfig = {
   name: "Catiano Norberto Ermelinda",
+  displayName: "Catiano Norberto",
   initials: "CN",
   url: "https://portfolio-profissional.vercel.app",
   email: "catianonorberto@gmail.com",
