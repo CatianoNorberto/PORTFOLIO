@@ -42,7 +42,7 @@ export default function RootLayout({
       data-scroll-behavior="smooth"
       className="dark h-full antialiased"
     >
-      <body className="min-h-full">
+      <body suppressHydrationWarning className="min-h-full">
         <Script id="theme-init" strategy="beforeInteractive">
           {themeScript}
         </Script>

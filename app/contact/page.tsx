@@ -48,13 +48,21 @@ export default function ContactPage() {
 
           <Card className="p-6">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-cyan">
-              Telefone
+              Telefone / WhatsApp
             </p>
             <a
-              href={`tel:${siteConfig.phone.replace(/[^+\d]/g, "")}`}
+              href={siteConfig.whatsappUrl}
+              target="_blank"
+              rel="noreferrer noopener"
               className="mt-4 block text-lg font-semibold text-foreground transition-colors duration-300 hover:text-accent"
             >
               {siteConfig.phone}
+            </a>
+            <a
+              href={`tel:+${siteConfig.phoneDigits}`}
+              className="mt-2 inline-flex text-sm text-muted-foreground transition-colors duration-300 hover:text-foreground"
+            >
+              Tentar ligação direta
             </a>
           </Card>
 
@@ -87,8 +95,9 @@ export default function ContactPage() {
               Me conte o contexto e a prioridade.
             </h2>
             <p className="text-sm leading-7 text-muted-foreground sm:text-base">
-              O endpoint já está preparado via Route Handler em Next.js. Neste projeto,
-              a resposta é mockada para facilitar evolução futura.
+              O formulário já valida e recebe os dados no backend. Para entrega real
+              no seu email ainda seria preciso conectar um provedor como SMTP, Resend
+              ou Formspree.
             </p>
           </div>
 

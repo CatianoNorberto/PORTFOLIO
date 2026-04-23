@@ -3,6 +3,7 @@
 import type { ChangeEvent, FormEvent } from "react";
 import { useState } from "react";
 import type { ContactPayload } from "@/types/contact";
+import { siteConfig } from "@/lib/site";
 import { Button } from "@/components/ui/Button";
 
 const initialForm: ContactPayload = {
@@ -55,8 +56,7 @@ export function ContactForm() {
       setStatus({
         type: "success",
         message:
-          result.message ??
-          "Mensagem enviada com sucesso. Em producao, basta conectar a um provedor real.",
+          result.message ?? "Mensagem recebida com sucesso.",
       });
       setForm(initialForm);
     } catch (error) {
@@ -121,7 +121,14 @@ export function ContactForm() {
           {isSubmitting ? "Enviando..." : "Enviar mensagem"}
         </Button>
         <p className="text-sm text-muted-foreground">
-          Route handler mockada pronta para integrar com Resend, Formspree ou SMTP.
+          Se preferir, envie direto para{" "}
+          <a
+            href={`mailto:${siteConfig.email}`}
+            className="font-medium text-foreground transition-colors duration-300 hover:text-accent"
+          >
+            {siteConfig.email}
+          </a>
+          .
         </p>
       </div>
 

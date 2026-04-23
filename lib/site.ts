@@ -3,8 +3,10 @@ export const siteConfig = {
   role: "Desenvolvedor Fullstack Pleno",
   location: "São Paulo - SP",
   url: "https://portfolio-profissional.vercel.app",
-  email: "catianonorbertopeks@gmail.com",
+  email: "catianonorberto@gmail.com",
   phone: "+55 11 91245-7937",
+  phoneDigits: "5511912457937",
+  whatsappUrl: "https://wa.me/5511912457937",
   headline:
     "Desenvolvedor Fullstack Pleno com mais de 5 anos de experiência no desenvolvimento de aplicações web e mobile, atuando do frontend ao backend.",
   description:
@@ -62,8 +64,8 @@ export const siteConfig = {
   socialLinks: [
     { label: "GitHub", href: "https://github.com/CatianoNorberto" },
     { label: "LinkedIn", href: "https://linkedin.com/in/catiano-norberto" },
-    { label: "Email", href: "mailto:catianonorbertopeks@gmail.com" },
-    { label: "Telefone", href: "tel:+5511912457937" },
+    { label: "Email", href: "mailto:catianonorberto@gmail.com" },
+    { label: "WhatsApp", href: "https://wa.me/5511912457937" },
   ],
 } as const;
 

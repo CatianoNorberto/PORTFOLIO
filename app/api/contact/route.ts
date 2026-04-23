@@ -42,7 +42,6 @@ export async function POST(request: Request) {
   });
 
   return NextResponse.json({
-    message:
-      "Mensagem recebida com sucesso. Este envio esta mockado e pronto para integrar com um provedor real.",
+    message: "Mensagem recebida com sucesso.",
   });
 }
