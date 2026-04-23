@@ -57,12 +57,21 @@ export function ProjectCard({ project }: ProjectCardProps) {
       </div>
 
       <div className="mt-auto flex flex-wrap gap-3 pt-2">
-        <Button href={project.demoUrl} size="sm">
-          Ver demo
-        </Button>
-        <Button href={project.githubUrl} size="sm" variant="secondary">
-          Ver GitHub
-        </Button>
+        {project.demoUrl ? (
+          <Button href={project.demoUrl} size="sm">
+            Ver demo
+          </Button>
+        ) : null}
+        {project.githubUrl ? (
+          <Button href={project.githubUrl} size="sm" variant="secondary">
+            Ver GitHub
+          </Button>
+        ) : null}
+        {project.visibilityNote ? (
+          <p className="w-full text-sm leading-7 text-muted-foreground">
+            {project.visibilityNote}
+          </p>
+        ) : null}
       </div>
     </Card>
   );

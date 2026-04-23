@@ -4,22 +4,20 @@ import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { Container } from "@/components/ui/Container";
 
-const focusAreas = ["Pagamentos", "Performance", "Node.js", "React Native"];
-
 export function Hero() {
   return (
     <section className="section-spacing pt-14 md:pt-20">
       <Container className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
         <div className="flex flex-col gap-8 animate-fade-up">
           <span className="inline-flex w-fit items-center rounded-full border border-cyan/20 bg-cyan-soft px-4 py-2 text-xs font-semibold uppercase tracking-[0.26em] text-cyan">
-            Full stack para produtos digitais
+            {siteConfig.role}
           </span>
 
           <div className="space-y-6">
             <h1 className="max-w-4xl font-display text-5xl font-semibold tracking-tight text-foreground sm:text-6xl xl:text-7xl">
-              Interfaces memoráveis e sistemas{" "}
-              <span className="text-gradient">escaláveis</span> para produtos que
-              precisam performar.
+              {siteConfig.name.split(" ")[0]} construindo produtos{" "}
+              <span className="text-gradient">web e mobile</span> com performance,
+              UX e boa arquitetura.
             </h1>
             <p className="max-w-2xl text-lg leading-8 text-muted-foreground sm:text-xl">
               {siteConfig.heroDescription}
@@ -36,7 +34,7 @@ export function Hero() {
           </div>
 
           <div className="flex flex-wrap gap-3 text-sm text-muted-foreground">
-            {focusAreas.map((item) => (
+            {siteConfig.focusAreas.map((item) => (
               <span
                 key={item}
                 className="rounded-full border border-line bg-surface px-4 py-2"
@@ -92,8 +90,7 @@ export function Hero() {
                     Especialidades
                   </p>
                   <p className="mt-2 text-sm leading-7 text-foreground">
-                    Next.js, APIs com Node.js, integrações críticas, observabilidade e
-                    modernização de legado.
+                    {siteConfig.specialties}
                   </p>
                 </div>
                 <div className="rounded-3xl border border-line/70 bg-background/45 p-4">
@@ -101,8 +98,7 @@ export function Hero() {
                     Foco atual
                   </p>
                   <p className="mt-2 text-sm leading-7 text-foreground">
-                    Plataformas com pagamentos, dados em tempo real e experiências
-                    orientadas por performance.
+                    {siteConfig.currentFocus}
                   </p>
                 </div>
               </div>

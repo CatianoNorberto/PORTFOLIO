@@ -9,9 +9,9 @@ import { SectionTitle } from "@/components/ui/SectionTitle";
 export const metadata: Metadata = createPageMetadata({
   title: "Contato",
   description:
-    "Entre em contato para discutir projetos, consultoria técnica, evolução de produto ou novas oportunidades.",
+    "Entre em contato para discutir oportunidades, projetos web e mobile, evolução de produto ou desafios técnicos.",
   path: "/contact",
-  keywords: ["contato desenvolvedor full stack", "consultoria next.js"],
+  keywords: ["contato desenvolvedor full stack", "react native", "node.js"],
 });
 
 export default function ContactPage() {
@@ -43,6 +43,18 @@ export default function ContactPage() {
               className="mt-4 block text-lg font-semibold text-foreground transition-colors duration-300 hover:text-accent"
             >
               {siteConfig.email}
+            </a>
+          </Card>
+
+          <Card className="p-6">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-cyan">
+              Telefone
+            </p>
+            <a
+              href={`tel:${siteConfig.phone.replace(/[^+\d]/g, "")}`}
+              className="mt-4 block text-lg font-semibold text-foreground transition-colors duration-300 hover:text-accent"
+            >
+              {siteConfig.phone}
             </a>
           </Card>
 

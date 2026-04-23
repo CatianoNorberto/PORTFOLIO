@@ -22,8 +22,8 @@ export default function AboutPage() {
         <div className="space-y-8">
           <SectionTitle
             eyebrow="Sobre mim"
-            title="Tecnologia, produto e execução alinhados para gerar impacto sustentável."
-            description="Meu trabalho é conectar estratégia, experiência e arquitetura para transformar problemas complexos em soluções escaláveis. Gosto de atuar onde front-end, back-end e contexto de negócio realmente se encontram."
+            title="Experiência full stack aplicada a produtos web, mobile e cenários financeiros."
+            description="Atuo do frontend ao backend em aplicações web e mobile, com foco em qualidade de código, performance, UX e boas práticas. Minha trajetória combina interfaces modernas, APIs robustas e evolução constante de produto."
           />
 
           <div className="grid gap-4 sm:grid-cols-3">
@@ -60,8 +60,8 @@ export default function AboutPage() {
       <section className="space-y-8">
         <SectionTitle
           eyebrow="Como eu trabalho"
-          title="Princípios que orientam arquitetura, produto e colaboração."
-          description="Boas decisões técnicas quase sempre nascem de clareza. Por isso, priorizo contexto, comunicação e estrutura antes de complexidade."
+          title="Princípios que guiam minhas decisões técnicas."
+          description="Meu currículo mostra uma atuação prática em entregas reais. Estes são os pilares que mais se repetem no meu jeito de construir software."
         />
 
         <div className="grid gap-6 md:grid-cols-3">
@@ -79,8 +79,8 @@ export default function AboutPage() {
       <section className="space-y-8">
         <SectionTitle
           eyebrow="Stack em profundidade"
-          title="Tecnologias e domínios onde atuo com mais recorrência."
-          description="A base é moderna, mas o diferencial está em aplicar cada tecnologia no contexto certo, com foco em manutenção, desempenho e evolução contínua."
+          title="Tecnologias e contextos em que atuo com mais recorrência."
+          description="Minha atuação passa por frontend, mobile, backend, APIs, bancos de dados e cloud, sempre conectando implementação com boa experiência de uso."
         />
 
         <div className="grid gap-6 md:grid-cols-2">
@@ -105,6 +105,60 @@ export default function AboutPage() {
             </Card>
           ))}
         </div>
+      </section>
+
+      <section className="grid gap-6 lg:grid-cols-2">
+        <Card className="p-6">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-cyan">
+            Formação acadêmica
+          </p>
+          <div className="mt-5 space-y-4">
+            {siteConfig.education.map((item) => (
+              <div key={`${item.title}-${item.institution}`} className="space-y-1">
+                <h3 className="font-display text-2xl font-semibold text-foreground">
+                  {item.title}
+                </h3>
+                <p className="text-sm text-muted-foreground">{item.institution}</p>
+                <p className="text-sm leading-7 text-foreground">{item.period}</p>
+              </div>
+            ))}
+          </div>
+        </Card>
+
+        <Card className="p-6">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-cyan">
+            Idiomas & Ferramentas
+          </p>
+          <div className="mt-5 space-y-6">
+            <div>
+              <p className="text-sm font-semibold text-foreground">Idiomas</p>
+              <div className="mt-3 flex flex-wrap gap-2">
+                {siteConfig.languages.map((item) => (
+                  <span
+                    key={item}
+                    className="rounded-full border border-line bg-background/45 px-3 py-2 text-xs font-medium text-foreground"
+                  >
+                    {item}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <p className="text-sm font-semibold text-foreground">Ferramentas</p>
+              <div className="mt-3 flex flex-wrap gap-2">
+                {siteConfig.tooling.map((item) => (
+                  <span
+                    key={item}
+                    className="rounded-full border border-line bg-background/45 px-3 py-2 text-xs font-medium text-foreground"
+                  >
+                    {item}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </Card>
       </section>
     </Container>
   );

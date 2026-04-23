@@ -15,9 +15,9 @@ export const metadata: Metadata = createPageMetadata({
 });
 
 const projectPillars = [
-  "Pagamentos e fluxos críticos",
-  "Dashboards com dados operacionais",
-  "Aplicações mobile para produtividade",
+  "Produtos financeiros e pagamentos",
+  "Plataformas web com experiência interativa",
+  "Projetos corporativos proprietários",
 ];
 
 export default function ProjectsPage() {
@@ -38,9 +38,9 @@ export default function ProjectsPage() {
             Projetos que evidenciam profundidade técnica e leitura de produto.
           </h2>
           <p className="text-sm leading-7 text-muted-foreground sm:text-base">
-            Aqui estão casos que exploram escala, integrações, observabilidade,
-            experiência mobile e performance web. O recorte foi feito para mostrar
-            amplitude sem perder foco em execução.
+            Aqui estão entregas baseadas na minha experiência profissional real.
+            Parte desse trabalho foi construída em ambiente corporativo, então alguns
+            projetos não possuem links públicos de demo ou repositório.
           </p>
         </div>
 

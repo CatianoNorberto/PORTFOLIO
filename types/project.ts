@@ -5,7 +5,8 @@ export type Project = {
   description: string;
   impact: string;
   technologies: string[];
-  githubUrl: string;
-  demoUrl: string;
+  githubUrl?: string;
+  demoUrl?: string;
+  visibilityNote?: string;
   featured?: boolean;
 };

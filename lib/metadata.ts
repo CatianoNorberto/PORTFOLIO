@@ -29,7 +29,6 @@ export const siteMetadata: Metadata = {
     card: "summary_large_image",
     title: defaultTitle,
     description: siteConfig.description,
-    creator: "@catianonorberto",
   },
   alternates: {
     canonical: "/",
@@ -70,7 +69,6 @@ export function createPageMetadata({
       card: "summary_large_image",
       title,
       description,
-      creator: "@catianonorberto",
     },
   };
 }

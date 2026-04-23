@@ -2,51 +2,60 @@ import type { Project } from "@/types/project";
 
 export const projects: Project[] = [
   {
-    slug: "payments-orchestrator",
-    name: "Payments Orchestrator",
-    category: "Fintech Platform",
+    slug: "keeper-app-banking",
+    name: "KeeperApp Banking",
+    category: "Fintech / Banking App",
     description:
-      "Plataforma full stack para checkout multiadquirente com split de pagamentos, antifraude e observabilidade operacional.",
-    impact: "Redução de 32% nas falhas de pagamento e ganho de visibilidade em tempo real do funil.",
-    technologies: ["Next.js", "Node.js", "Stripe", "PostgreSQL", "Redis"],
-    githubUrl: "https://github.com/catianonorberto/payments-orchestrator",
-    demoUrl: "https://payments-orchestrator.vercel.app",
+      "Aplicação web e mobile desenvolvida do zero para operações bancárias, com pagamentos via PIX, transferências, gestão de faturas e camadas de segurança.",
+    impact:
+      "A migração do fluxo de pagamento de síncrono para assíncrono reduziu o processamento de cerca de 10-12 segundos para 2-4 segundos, com ganho de resiliência e redução de custo de CPU.",
+    technologies: [
+      "React Native",
+      "React",
+      "Angular",
+      "TypeScript",
+      "Node.js",
+      "PostgreSQL",
+      "TSOA",
+      "AWS",
+    ],
+    visibilityNote: "Projeto proprietário sem links públicos.",
     featured: true,
   },
   {
-    slug: "ops-analytics-dashboard",
-    name: "Ops Analytics Dashboard",
-    category: "SaaS Analytics",
+    slug: "plataforma-reserva-mesas",
+    name: "Plataforma de Reserva de Mesas",
+    category: "Eventos / Experiência Interativa",
     description:
-      "Dashboard de operações para times logísticos com streaming de eventos, alertas inteligentes e KPIs por squad.",
-    impact: "Tempo de resposta 45% menor em incidentes operacionais e decisões mais rápidas por turno.",
-    technologies: ["React", "Node.js", "WebSocket", "Redis", "Charting"],
-    githubUrl: "https://github.com/catianonorberto/ops-analytics-dashboard",
-    demoUrl: "https://ops-analytics-dashboard.vercel.app",
+      "Plataforma web para reserva de mesas em eventos com mapa interativo em canvas, autenticação, perfis de acesso e integração com APIs.",
+    impact:
+      "Entregou uma experiência visual de reserva com operação por perfis distintos de admin, usuário e hostess em uma interface responsiva.",
+    technologies: ["React", "TypeScript", "Canvas", "Autenticação", "APIs"],
+    visibilityNote: "Projeto proprietário sem links públicos.",
     featured: true,
   },
   {
-    slug: "mobile-field-suite",
-    name: "Mobile Field Suite",
-    category: "Mobile Productivity",
+    slug: "produtos-web-mobile-firgun",
+    name: "Produtos Web e Mobile na Firgun",
+    category: "Produtos Digitais",
     description:
-      "Aplicativo React Native para equipes de campo com sincronização offline, assinatura digital e roteiros dinâmicos.",
-    impact: "Economia média de 8 horas por semana para operações em campo com sincronização resiliente.",
-    technologies: ["React Native", "Expo", "Node.js", "GraphQL", "SQLite"],
-    githubUrl: "https://github.com/catianonorberto/mobile-field-suite",
-    demoUrl: "https://mobile-field-suite.vercel.app",
+      "Desenvolvimento full stack de aplicações web e mobile com React, React Native e APIs REST em Node.js e Express, cobrindo regras de negócio, autenticação e integrações.",
+    impact:
+      "Atuação contínua em evolução de produto, correções, refinamentos técnicos e integrações com banco de dados em times ágeis.",
+    technologies: ["React", "React Native", "Node.js", "Express", "REST APIs"],
+    visibilityNote: "Projetos corporativos desenvolvidos em contexto privado.",
     featured: true,
   },
   {
-    slug: "enterprise-migration-hub",
-    name: "Enterprise Migration Hub",
-    category: "Enterprise Modernization",
+    slug: "interfaces-web-grupo-meza",
+    name: "Interfaces Web no Grupo Meza",
+    category: "Frontend / UX",
     description:
-      "Hub de migração para modernização de legado com filas assíncronas, rollback seguro e trilhas de auditoria.",
-    impact: "Migração de 120 mil registros com zero downtime percebido e rastreabilidade ponta a ponta.",
-    technologies: ["Angular", "Node.js", "RabbitMQ", "Azure", "SQL Server"],
-    githubUrl: "https://github.com/catianonorberto/enterprise-migration-hub",
-    demoUrl: "https://enterprise-migration-hub.vercel.app",
+      "Criação de interfaces web responsivas e componentes reutilizáveis com React, a partir de layouts no Figma e integração com APIs.",
+    impact:
+      "Melhorou a consistência visual e a experiência do usuário enquanto evoluía funcionalidades existentes com foco em UX e performance.",
+    technologies: ["React", "TypeScript", "Figma", "APIs", "CSS3"],
+    visibilityNote: "Projeto profissional sem demonstração pública.",
   },
 ];
 

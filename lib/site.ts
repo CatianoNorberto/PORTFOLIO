@@ -1,40 +1,81 @@
 export const siteConfig = {
-  name: "Catiano Norberto",
-  role: "Full Stack Developer",
-  location: "Brasil",
+  name: "Catiano Norberto Ermelinda",
+  role: "Desenvolvedor Fullstack Pleno",
+  location: "São Paulo - SP",
   url: "https://portfolio-profissional.vercel.app",
-  email: "contato@catianonorberto.dev",
-  headline: "Construo produtos digitais escaláveis com foco em performance, clareza e impacto real de negócio.",
+  email: "catianonorbertopeks@gmail.com",
+  phone: "+55 11 91245-7937",
+  headline:
+    "Desenvolvedor Fullstack Pleno com mais de 5 anos de experiência no desenvolvimento de aplicações web e mobile, atuando do frontend ao backend.",
   description:
-    "Portfólio profissional de Catiano Norberto, desenvolvedor full stack especializado em experiências web modernas, plataformas de pagamento e sistemas de alta confiabilidade.",
-  availability: "Disponível para projetos remotos, consultoria técnica e times de produto em crescimento.",
+    "Portfólio profissional de Catiano Norberto Ermelinda, desenvolvedor full stack com experiência em React, React Native, Angular, TypeScript e Node.js, com atuação em produtos financeiros e plataformas complexas.",
+  availability:
+    "Baseado em São Paulo - SP, com atuação em produtos web e mobile e abertura para conversar sobre oportunidades e projetos.",
+  heroTitle:
+    "Aplicações web e mobile com foco em performance, UX e qualidade de código.",
   heroDescription:
-    "Atuo de ponta a ponta em produtos digitais, conectando experiência de usuário, arquitetura front-end, APIs robustas e decisões técnicas orientadas por resultado.",
+    "Experiência sólida com React, React Native, Angular, TypeScript e Node.js, construindo produtos financeiros e plataformas complexas com foco em boas práticas, performance e experiência do usuário.",
+  focusAreas: [
+    "React",
+    "React Native",
+    "Node.js",
+    "Pagamentos",
+    "Angular",
+    "AWS",
+  ],
+  specialties:
+    "Frontend responsivo, apps mobile, APIs em Node.js, fluxos de pagamento, integrações e arquitetura orientada a performance.",
+  currentFocus:
+    "Produtos financeiros, aplicações web e mobile, integrações assíncronas e evolução contínua de UX.",
   stats: [
-    { value: "6+", label: "anos entregando software em produção" },
-    { value: "12", label: "projetos com foco em performance e operação" },
-    { value: "99.9%", label: "meta de confiabilidade em fluxos críticos" },
+    { value: "5+", label: "anos desenvolvendo aplicações web e mobile" },
+    { value: "2-4s", label: "tempo final do fluxo de pagamentos após otimização" },
+    { value: "3", label: "empresas com atuação em produtos e plataformas complexas" },
   ],
   principles: [
-    "Pensamento de produto para alinhar tecnologia com resultado de negócio.",
-    "Código limpo, modular e fácil de manter por diferentes times.",
-    "Observabilidade, performance e DX como parte da definição de pronto.",
+    "Qualidade de código e boas práticas como base para evolução sustentável do produto.",
+    "Performance e resiliência tratadas como responsabilidade da implementação, não como detalhe final.",
+    "UX clara e interfaces responsivas como parte central da entrega técnica.",
+  ],
+  education: [
+    {
+      title: "Engenharia da Computação (trancado)",
+      institution: "Universidade Paulista (UNIP)",
+      period: "2021 - 2025",
+    },
+  ],
+  languages: [
+    "Português (Nativo)",
+    "Inglês (Intermediário)",
+    "Espanhol (Básico)",
+  ],
+  tooling: [
+    "Git",
+    "GitHub",
+    "Bitbucket",
+    "Jira",
+    "Trello",
+    "Figma",
+    "Storybook",
+    "Jest",
   ],
   socialLinks: [
-    { label: "GitHub", href: "https://github.com/catianonorberto" },
-    { label: "LinkedIn", href: "https://www.linkedin.com/in/catianonorberto" },
-    { label: "Email", href: "mailto:contato@catianonorberto.dev" },
+    { label: "GitHub", href: "https://github.com/CatianoNorberto" },
+    { label: "LinkedIn", href: "https://linkedin.com/in/catiano-norberto" },
+    { label: "Email", href: "mailto:catianonorbertopeks@gmail.com" },
+    { label: "Telefone", href: "tel:+5511912457937" },
   ],
 } as const;
 
 export const defaultKeywords = [
   "desenvolvedor full stack",
-  "next.js portfolio",
+  "portfólio desenvolvedor full stack",
   "typescript",
-  "tailwind css",
   "node.js",
   "react native",
   "angular",
   "pagamentos",
+  "react",
   "performance web",
+  "produtos financeiros",
 ];
