@@ -68,9 +68,7 @@ export async function POST(request: Request) {
         subject: emailContent.subject,
         html: emailContent.html,
         text: emailContent.text,
-        headers: {
-          "Reply-To": contactData.email,
-        },
+        reply_to: contactData.email,
       }),
     });
 
