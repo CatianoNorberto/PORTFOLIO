@@ -18,6 +18,17 @@ type FormStatus = {
   message: string;
 };
 
+function resolveErrorMessage(errorCode: string | undefined, t: ReturnType<typeof useTranslations>) {
+  switch (errorCode) {
+    case "invalid_contact_data":
+      return t("validationError");
+    case "email_not_configured":
+      return t("configError");
+    default:
+      return t("sendError");
+  }
+}
+
 export function ContactForm() {
   const [form, setForm] = useState<ContactPayload>(initialForm);
   const [status, setStatus] = useState<FormStatus>({ type: "idle", message: "" });
@@ -50,10 +61,10 @@ export function ContactForm() {
         body: JSON.stringify(form),
       });
 
-      await response.json();
+      const result = (await response.json()) as { error?: string };
 
       if (!response.ok) {
-        throw new Error(t("sendError"));
+        throw new Error(resolveErrorMessage(result.error, t));
       }
 
       setStatus({

@@ -265,7 +265,7 @@
       "description": "If you need support to structure a new product, improve performance or unblock a critical initiative, this is a good starting point."
     },
     "formTitle": "Tell me about the context and priority.",
-    "formDescription": "The form already validates and receives data on the backend. To deliver messages to your actual inbox, it still needs to be connected to a provider such as SMTP, Resend or Formspree."
+    "formDescription": "The form is ready for real email delivery. You only need to configure the provider environment variables to send messages to your inbox."
   },
   "ContactForm": {
     "nameLabel": "Name",
@@ -275,8 +275,10 @@
     "emailPlaceholder": "you@company.com",
     "messagePlaceholder": "Tell me a bit about the project, context or opportunity.",
     "directEmailPrefix": "If you prefer, send it directly to",
-    "success": "Message received successfully.",
-    "sendError": "Could not send your message.",
-    "genericError": "An error occurred while sending your message."
+    "success": "Message sent successfully. I will get back to you as soon as possible.",
+    "sendError": "Could not send your message right now.",
+    "genericError": "An error occurred while sending your message.",
+    "configError": "Email delivery is not configured in this environment yet.",
+    "validationError": "Please fill in your name, a valid email address and a message before sending."
   }
 }

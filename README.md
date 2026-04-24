@@ -42,6 +42,21 @@ npm install
 npm run dev
 ```
 
+## Email real
+
+O formulario de contato pode enviar emails reais usando a API HTTP do Resend.
+
+1. Crie uma API key no Resend.
+2. Configure as variaveis abaixo em `.env.local` ou na Vercel:
+
+```bash
+RESEND_API_KEY=
+RESEND_FROM_EMAIL="Portfolio Catiano <onboarding@resend.dev>"
+CONTACT_TO_EMAIL="catianonorberto@gmail.com"
+```
+
+Para producao, o ideal e usar um dominio verificado no `RESEND_FROM_EMAIL`.
+
 ## Qualidade
 
 ```bash

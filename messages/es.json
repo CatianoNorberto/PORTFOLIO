@@ -265,7 +265,7 @@
       "description": "Si buscas apoyo para estructurar un nuevo producto, mejorar performance o destrabar una iniciativa crítica, este es un buen punto de partida."
     },
     "formTitle": "Cuéntame el contexto y la prioridad.",
-    "formDescription": "El formulario ya valida y recibe los datos en el backend. Para entregar mensajes al email real, todavía sería necesario conectar un proveedor como SMTP, Resend o Formspree."
+    "formDescription": "El formulario ya está listo para enviar emails reales. Solo necesitas configurar las variables del proveedor en el entorno para entregar los mensajes en tu bandeja de entrada."
   },
   "ContactForm": {
     "nameLabel": "Nombre",
@@ -275,8 +275,10 @@
     "emailPlaceholder": "tu@empresa.com",
     "messagePlaceholder": "Cuéntame un poco sobre el proyecto, el contexto o la oportunidad.",
     "directEmailPrefix": "Si prefieres, envíalo directamente a",
-    "success": "Mensaje recibido con éxito.",
-    "sendError": "No fue posible enviar tu mensaje.",
-    "genericError": "Ocurrió un error al enviar tu mensaje."
+    "success": "Mensaje enviado con éxito. Te responderé lo antes posible.",
+    "sendError": "No fue posible enviar tu mensaje en este momento.",
+    "genericError": "Ocurrió un error al enviar tu mensaje.",
+    "configError": "El envío de email todavía no está configurado en este entorno.",
+    "validationError": "Completa tu nombre, un email válido y el mensaje antes de enviarlo."
   }
 }
