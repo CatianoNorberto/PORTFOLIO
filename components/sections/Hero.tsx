@@ -1,9 +1,9 @@
-import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { siteConfig } from "@/lib/site";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { Container } from "@/components/ui/Container";
+import { ProfilePhoto } from "@/components/ui/ProfilePhoto";
 
 export function Hero() {
   const tHome = useTranslations("Home.hero");
@@ -67,6 +67,12 @@ export function Hero() {
             <div className="absolute -left-10 bottom-4 h-32 w-32 rounded-full bg-cyan/15 blur-3xl" />
 
             <div className="relative space-y-6">
+              <ProfilePhoto
+                alt={tHome("imageAlt")}
+                priority
+                className="mx-auto max-w-[34rem]"
+              />
+
               <div className="flex items-center justify-between gap-4 rounded-3xl border border-line/70 bg-background/45 px-4 py-3">
                 <div>
                   <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
@@ -76,15 +82,6 @@ export function Hero() {
                 </div>
                 <span className="h-3 w-3 rounded-full bg-cyan shadow-[0_0_20px_rgba(86,216,255,0.8)]" />
               </div>
-
-              <Image
-                src="/profile-workspace.svg"
-                alt={tHome("imageAlt")}
-                width={900}
-                height={900}
-                priority
-                className="w-full animate-float"
-              />
 
               <div className="grid gap-4 sm:grid-cols-2">
                 <div className="rounded-3xl border border-line/70 bg-background/45 p-4">

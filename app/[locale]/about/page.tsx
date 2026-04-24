@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { skillGroups } from "@/data/skills";
 import { createPageMetadata } from "@/lib/metadata";
@@ -7,6 +6,7 @@ import { siteConfig } from "@/lib/site";
 import type { AppLocale } from "@/i18n/routing";
 import { Card } from "@/components/ui/Card";
 import { Container } from "@/components/ui/Container";
+import { ProfilePhoto } from "@/components/ui/ProfilePhoto";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 
 type AboutPageProps = PageProps<"/[locale]/about">;
@@ -61,12 +61,10 @@ export default async function AboutPage({ params }: AboutPageProps) {
         <Card className="relative overflow-hidden p-6 sm:p-8">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,140,66,0.12),transparent_32%),radial-gradient(circle_at_bottom_left,rgba(86,216,255,0.12),transparent_34%)]" />
           <div className="relative space-y-6">
-            <Image
-              src="/profile-workspace.svg"
+            <ProfilePhoto
               alt={tAbout("hero.imageAlt")}
-              width={900}
-              height={900}
-              className="w-full"
+              className="mx-auto max-w-[38rem]"
+              sizes="(min-width: 1280px) 36rem, (min-width: 1024px) 40vw, 100vw"
             />
             <p className="text-sm leading-7 text-muted-foreground">
               {tSite("headline")}

@@ -2,6 +2,7 @@ export const siteConfig = {
   name: "Catiano Norberto Ermelinda",
   displayName: "Catiano Norberto",
   initials: "CN",
+  profileImage: "/catiano-profile.png",
   url: "https://portfolio-profissional.vercel.app",
   email: "catianonorberto@gmail.com",
   phone: "+55 11 91245-7937",
