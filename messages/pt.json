@@ -279,6 +279,7 @@
     "sendError": "Não foi possível enviar a mensagem agora.",
     "genericError": "Ocorreu um erro ao enviar sua mensagem.",
     "configError": "O envio de email ainda não está configurado neste ambiente.",
+    "configFallbackNotice": "O envio direto ainda não está ativo aqui. Abri seu app de email com a mensagem preenchida para você concluir o envio.",
     "validationError": "Preencha nome, email válido e mensagem antes de enviar."
   }
 }

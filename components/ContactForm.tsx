@@ -18,6 +18,19 @@ type FormStatus = {
   message: string;
 };
 
+function buildMailtoUrl(form: ContactPayload) {
+  const subject = `Contato via portfolio - ${form.name}`.trim();
+  const body = [
+    `Nome: ${form.name}`,
+    `Email: ${form.email}`,
+    "",
+    "Mensagem:",
+    form.message,
+  ].join("\n");
+
+  return `mailto:${siteConfig.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+}
+
 function resolveErrorMessage(errorCode: string | undefined, t: ReturnType<typeof useTranslations>) {
   switch (errorCode) {
     case "invalid_contact_data":
@@ -64,6 +77,15 @@ export function ContactForm() {
       const result = (await response.json()) as { error?: string };
 
       if (!response.ok) {
+        if (result.error === "email_not_configured") {
+          window.location.href = buildMailtoUrl(form);
+          setStatus({
+            type: "success",
+            message: t("configFallbackNotice"),
+          });
+          return;
+        }
+
         throw new Error(resolveErrorMessage(result.error, t));
       }
 
