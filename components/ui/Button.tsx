@@ -60,8 +60,9 @@ export function Button(props: ButtonProps) {
       className
     );
     const external = isExternalLink(href);
+    const downloadLink = linkProps.download !== undefined;
 
-    if (external) {
+    if (external || downloadLink) {
       const shouldOpenNewTab = href.startsWith("http");
 
       return (

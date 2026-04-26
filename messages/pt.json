@@ -25,10 +25,10 @@
     }
   },
   "Site": {
-    "role": "Desenvolvedor Fullstack Pleno",
+    "role": "Desenvolvedor Full Stack",
     "location": "São Paulo - SP",
-    "availability": "Baseado em São Paulo - SP, com atuação em produtos web e mobile e abertura para conversar sobre oportunidades e projetos.",
-    "headline": "Desenvolvedor Fullstack Pleno com mais de 5 anos de experiência no desenvolvimento de aplicações web e mobile, atuando do frontend ao backend.",
+    "availability": "Disponível para oportunidades em Full Stack, React Native e Frontend, com foco em produtos web e mobile.",
+    "headline": "Desenvolvedor Full Stack com mais de 5 anos de experiência entregando aplicações web e mobile, atuando do frontend ao backend.",
     "heroDescription": "Experiência sólida com React, React Native, Angular, TypeScript e Node.js, construindo produtos financeiros e plataformas complexas com foco em boas práticas, performance e experiência do usuário.",
     "specialties": "Frontend responsivo, apps mobile, APIs em Node.js, fluxos de pagamento, integrações e arquitetura orientada a performance.",
     "currentFocus": "Produtos financeiros, aplicações web e mobile, integrações assíncronas e evolução contínua de UX.",
@@ -95,6 +95,7 @@
     "contactForm": "Formulário de contato",
     "viewAllProjects": "Ver todos os projetos",
     "viewFullExperience": "Ver experiência completa",
+    "downloadCv": "Baixar CV",
     "sendMessage": "Enviar mensagem",
     "sending": "Enviando...",
     "portfolioReady": "Disponível para oportunidades em produtos web, mobile e full stack",
@@ -106,14 +107,41 @@
   },
   "Home": {
     "hero": {
-      "eyebrow": "Desenvolvedor Fullstack Pleno",
+      "eyebrow": "Full Stack | React Native, Angular, Node.js",
       "title": "{firstName} construindo produtos web e mobile com performance, UX e boa arquitetura.",
       "projectsButton": "Ver projetos",
-      "contactButton": "Iniciar conversa",
+      "contactButton": "Disponível para oportunidades",
       "availabilityLabel": "Disponibilidade",
       "specialtiesLabel": "Especialidades",
       "currentFocusLabel": "Foco atual",
       "imageAlt": "Foto profissional de Catiano Norberto"
+    },
+    "achievements": {
+      "eyebrow": "Principais resultados",
+      "title": "Resultados concretos em performance, produto e arquitetura.",
+      "description": "Alguns marcos que resumem bem meu impacto em projetos web, mobile e financeiros.",
+      "items": {
+        "payments": {
+          "metric": "2-4s",
+          "title": "Fluxo de pagamento acelerado",
+          "description": "Reduzi o processamento do fluxo de pagamento de cerca de 10-12 segundos para 2-4 segundos com uma arquitetura assíncrona mais resiliente."
+        },
+        "banking": {
+          "metric": "Do zero",
+          "title": "App banking construído do zero",
+          "description": "Participei da criação do KeeperApp Banking cobrindo PIX, transferências, faturas, segurança e experiência web/mobile."
+        },
+        "backend": {
+          "metric": "Node + TSOA",
+          "title": "Backend estruturado do início",
+          "description": "Desenvolvi backend com Node.js, PostgreSQL e TSOA, garantindo documentação, padronização e base sólida para evolução."
+        },
+        "aws": {
+          "metric": "AWS",
+          "title": "Integrações distribuídas em produção",
+          "description": "Integrei SNS, SQS, Lambda, RDS, Aurora e S3 em fluxos críticos, com foco em resiliência, custo e escalabilidade."
+        }
+      }
     },
     "skills": {
       "eyebrow": "Tecnologias",
@@ -133,7 +161,7 @@
     "contactCta": {
       "eyebrow": "Vamos construir algo forte",
       "title": "Se você precisa elevar produto, performance ou confiabilidade, vamos conversar.",
-      "description": "Posso colaborar em novos produtos, evolução de plataformas existentes ou iniciativas de modernização."
+      "description": "Posso colaborar em novas oportunidades Full Stack, React Native, Frontend ou em iniciativas de evolução de produto."
     }
   },
   "SkillsData": {
@@ -232,6 +260,8 @@
       "description": "Minha atuação passa por frontend, mobile, backend, APIs, bancos de dados e cloud, sempre conectando implementação com boa experiência de uso."
     },
     "educationLabel": "Formação acadêmica",
+    "downloadCv": "Baixar CV",
+    "contactButton": "Falar comigo",
     "languagesToolsLabel": "Idiomas & Ferramentas",
     "languagesLabel": "Idiomas",
     "toolsLabel": "Ferramentas"
@@ -265,7 +295,7 @@
       "description": "Se você busca apoio para estruturar um novo produto, elevar performance ou destravar uma iniciativa crítica, este é um bom ponto de partida."
     },
     "formTitle": "Me conte o contexto e a prioridade.",
-    "formDescription": "O formulário já está pronto para envio real de email. Basta configurar as variáveis do provedor no ambiente para entregar as mensagens na sua caixa de entrada."
+    "formDescription": "Compartilhe o contexto, objetivo ou oportunidade. Você também pode falar comigo pelo email e WhatsApp exibidos nesta página."
   },
   "ContactForm": {
     "nameLabel": "Nome",

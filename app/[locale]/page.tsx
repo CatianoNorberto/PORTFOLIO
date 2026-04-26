@@ -4,6 +4,7 @@ import { ContactCta } from "@/components/sections/ContactCta";
 import { ExperiencePreview } from "@/components/sections/ExperiencePreview";
 import { FeaturedProjects } from "@/components/sections/FeaturedProjects";
 import { Hero } from "@/components/sections/Hero";
+import { MainAchievements } from "@/components/sections/MainAchievements";
 import { SkillsSection } from "@/components/sections/SkillsSection";
 import { createPageMetadata } from "@/lib/metadata";
 import type { AppLocale } from "@/i18n/routing";
@@ -30,6 +31,7 @@ export default async function HomePage({ params }: HomePageProps) {
   return (
     <>
       <Hero />
+      <MainAchievements />
       <SkillsSection />
       <FeaturedProjects />
       <ExperiencePreview />

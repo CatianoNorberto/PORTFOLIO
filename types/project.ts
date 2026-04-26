@@ -8,6 +8,7 @@ export type Project = {
   id: ProjectId;
   slug: string;
   technologies: string[];
+  mockupSrc?: string;
   githubUrl?: string;
   demoUrl?: string;
   featured?: boolean;

@@ -17,7 +17,7 @@ export const skillGroups: SkillGroup[] = [
   },
   {
     id: "backendApis",
-    items: ["Node.js", "Express", "Fastify", "TSOA", "REST APIs", "Autenticação"],
+    items: ["Node.js", "Express", "Fastify", "TSOA", "REST APIs", "Authentication"],
   },
   {
     id: "dataCloud",

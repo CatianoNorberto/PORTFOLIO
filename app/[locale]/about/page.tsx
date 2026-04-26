@@ -8,6 +8,7 @@ import { Card } from "@/components/ui/Card";
 import { Container } from "@/components/ui/Container";
 import { ProfilePhoto } from "@/components/ui/ProfilePhoto";
 import { SectionTitle } from "@/components/ui/SectionTitle";
+import { Button } from "@/components/ui/Button";
 
 type AboutPageProps = PageProps<"/[locale]/about">;
 
@@ -55,6 +56,15 @@ export default async function AboutPage({ params }: AboutPageProps) {
                 </p>
               </Card>
             ))}
+          </div>
+
+          <div className="flex flex-col gap-4 sm:flex-row">
+            <Button href={siteConfig.resumePath} download size="lg">
+              {tAbout("downloadCv")}
+            </Button>
+            <Button href="/contact" size="lg" variant="secondary">
+              {tAbout("contactButton")}
+            </Button>
           </div>
         </div>
 

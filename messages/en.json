@@ -25,10 +25,10 @@
     }
   },
   "Site": {
-    "role": "Mid-Level Full Stack Developer",
+    "role": "Full Stack Developer",
     "location": "São Paulo - SP",
-    "availability": "Based in São Paulo - SP, working on web and mobile products and open to discussing opportunities and projects.",
-    "headline": "Mid-level Full Stack Developer with more than 5 years of experience building web and mobile applications, working from frontend to backend.",
+    "availability": "Available for Full Stack, React Native and Frontend opportunities, with a focus on web and mobile products.",
+    "headline": "Full Stack Developer with 5+ years of experience building web and mobile applications from frontend to backend.",
     "heroDescription": "Strong experience with React, React Native, Angular, TypeScript and Node.js, building financial products and complex platforms with a focus on best practices, performance and user experience.",
     "specialties": "Responsive frontend, mobile apps, Node.js APIs, payment flows, integrations and performance-oriented architecture.",
     "currentFocus": "Financial products, web and mobile applications, asynchronous integrations and continuous UX improvement.",
@@ -95,6 +95,7 @@
     "contactForm": "Contact form",
     "viewAllProjects": "See all projects",
     "viewFullExperience": "See full experience",
+    "downloadCv": "Download CV",
     "sendMessage": "Send message",
     "sending": "Sending...",
     "portfolioReady": "Available for opportunities in web, mobile and full stack products",
@@ -106,14 +107,41 @@
   },
   "Home": {
     "hero": {
-      "eyebrow": "Mid-Level Full Stack Developer",
+      "eyebrow": "Full Stack Developer | React Native, Angular, Node.js",
       "title": "{firstName} building web and mobile products with performance, UX and solid architecture.",
       "projectsButton": "View projects",
-      "contactButton": "Start a conversation",
+      "contactButton": "Available for opportunities",
       "availabilityLabel": "Availability",
       "specialtiesLabel": "Specialties",
       "currentFocusLabel": "Current focus",
       "imageAlt": "Professional photo of Catiano Norberto"
+    },
+    "achievements": {
+      "eyebrow": "Main achievements",
+      "title": "Concrete results across performance, product and architecture.",
+      "description": "A few highlights that summarize my impact on web, mobile and financial products.",
+      "items": {
+        "payments": {
+          "metric": "2-4s",
+          "title": "Faster payment flow",
+          "description": "Reduced payment processing from roughly 10-12 seconds to 2-4 seconds by redesigning the flow around a more resilient asynchronous architecture."
+        },
+        "banking": {
+          "metric": "From zero",
+          "title": "Banking app built from scratch",
+          "description": "Helped build KeeperApp Banking from the ground up, covering PIX, transfers, invoices, security and web/mobile experience."
+        },
+        "backend": {
+          "metric": "Node + TSOA",
+          "title": "Backend structured from day one",
+          "description": "Built the backend with Node.js, PostgreSQL and TSOA, creating a strong foundation for documentation, standardization and long-term evolution."
+        },
+        "aws": {
+          "metric": "AWS",
+          "title": "Distributed integrations in production",
+          "description": "Integrated SNS, SQS, Lambda, RDS, Aurora and S3 for critical flows with a focus on resilience, cost efficiency and scalability."
+        }
+      }
     },
     "skills": {
       "eyebrow": "Technologies",
@@ -133,7 +161,7 @@
     "contactCta": {
       "eyebrow": "Let's build something strong",
       "title": "If you need to improve product quality, performance or reliability, let's talk.",
-      "description": "I can contribute to new products, the evolution of existing platforms or modernization initiatives."
+      "description": "I can contribute to Full Stack, React Native and Frontend opportunities, as well as product evolution and modernization initiatives."
     }
   },
   "SkillsData": {
@@ -232,6 +260,8 @@
       "description": "My work spans frontend, mobile, backend, APIs, databases and cloud, always connecting implementation to a strong user experience."
     },
     "educationLabel": "Education",
+    "downloadCv": "Download CV",
+    "contactButton": "Contact me",
     "languagesToolsLabel": "Languages & Tools",
     "languagesLabel": "Languages",
     "toolsLabel": "Tools"
@@ -265,7 +295,7 @@
       "description": "If you need support to structure a new product, improve performance or unblock a critical initiative, this is a good starting point."
     },
     "formTitle": "Tell me about the context and priority.",
-    "formDescription": "The form is ready for real email delivery. You only need to configure the provider environment variables to send messages to your inbox."
+    "formDescription": "Share the context, role or opportunity. You can also reach me directly through the email and WhatsApp shown on this page."
   },
   "ContactForm": {
     "nameLabel": "Name",

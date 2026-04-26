@@ -8,6 +8,7 @@ import { ProfilePhoto } from "@/components/ui/ProfilePhoto";
 export function Hero() {
   const tHome = useTranslations("Home.hero");
   const tSite = useTranslations("Site");
+  const tCommon = useTranslations("Common");
 
   return (
     <section className="section-spacing pt-14 md:pt-20">
@@ -32,6 +33,9 @@ export function Hero() {
             </Button>
             <Button href="/contact" size="lg" variant="secondary">
               {tHome("contactButton")}
+            </Button>
+            <Button href={siteConfig.resumePath} download size="lg" variant="ghost">
+              {tCommon("downloadCv")}
             </Button>
           </div>
 

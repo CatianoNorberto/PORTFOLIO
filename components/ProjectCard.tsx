@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 import type { Project } from "@/types/project";
 import { cn } from "@/lib/utils";
@@ -20,6 +21,19 @@ export function ProjectCard({ project }: ProjectCardProps) {
         project.featured && "border-accent/25 bg-surface-strong"
       )}
     >
+      {project.mockupSrc ? (
+        <div className="relative overflow-hidden rounded-[1.75rem] border border-line/70 bg-background/50 p-3">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(86,216,255,0.12),transparent_28%),radial-gradient(circle_at_bottom_left,rgba(255,140,66,0.12),transparent_28%)]" />
+          <Image
+            src={project.mockupSrc}
+            alt={tProject(`${project.id}.name`)}
+            width={1200}
+            height={760}
+            className="relative w-full rounded-[1.1rem] border border-line/60"
+          />
+        </div>
+      ) : null}
+
       <div className="space-y-4">
         <div className="flex flex-wrap items-center gap-3">
           <span className="rounded-full border border-cyan/20 bg-cyan-soft px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-cyan">
