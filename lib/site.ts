@@ -1,3 +1,7 @@
+import { buildEmailComposeUrl } from "@/lib/utils";
+
+const publicEmail = "catianonorberto@gmail.com";
+
 export const siteConfig = {
   name: "Catiano Norberto Ermelinda",
   displayName: "Catiano Norberto",
@@ -5,7 +9,8 @@ export const siteConfig = {
   profileImage: "/catiano-profile.png",
   resumePath: "/catiano-norberto-cv.docx",
   url: "https://portfolio-profissional.vercel.app",
-  email: "catianonorberto@gmail.com",
+  email: publicEmail,
+  emailComposeUrl: buildEmailComposeUrl({ to: publicEmail }),
   phone: "+55 11 91245-7937",
   phoneDigits: "5511912457937",
   whatsappUrl: "https://wa.me/5511912457937",
@@ -30,7 +35,7 @@ export const siteConfig = {
   socialLinks: [
     { label: "GitHub", href: "https://github.com/CatianoNorberto" },
     { label: "LinkedIn", href: "https://linkedin.com/in/catiano-norberto" },
-    { label: "Email", href: "mailto:catianonorberto@gmail.com" },
+    { label: "Email", href: buildEmailComposeUrl({ to: publicEmail }) },
     { label: "WhatsApp", href: "https://wa.me/5511912457937" },
   ],
 } as const;

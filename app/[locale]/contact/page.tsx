@@ -57,8 +57,10 @@ export default async function ContactPage({ params }: ContactPageProps) {
               {tCommon("email")}
             </p>
             <a
-              href={`mailto:${siteConfig.email}`}
+              href={siteConfig.emailComposeUrl}
               className="mt-4 block text-lg font-semibold text-foreground transition-colors duration-300 hover:text-accent"
+              target="_blank"
+              rel="noreferrer noopener"
             >
               {siteConfig.email}
             </a>

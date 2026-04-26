@@ -29,7 +29,7 @@ export function ContactCta() {
               <Button href="/contact" size="lg">
                 {tCommon("openContact")}
               </Button>
-              <Button href={`mailto:${siteConfig.email}`} size="lg" variant="secondary">
+              <Button href={siteConfig.emailComposeUrl} size="lg" variant="secondary">
                 {siteConfig.email}
               </Button>
             </div>

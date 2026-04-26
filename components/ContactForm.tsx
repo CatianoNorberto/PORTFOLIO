@@ -5,6 +5,7 @@ import { useState } from "react";
 import { useTranslations } from "next-intl";
 import type { ContactPayload } from "@/types/contact";
 import { siteConfig } from "@/lib/site";
+import { buildEmailComposeUrl } from "@/lib/utils";
 import { Button } from "@/components/ui/Button";
 
 const initialForm: ContactPayload = {
@@ -18,7 +19,7 @@ type FormStatus = {
   message: string;
 };
 
-function buildMailtoUrl(form: ContactPayload) {
+function buildEmailFallbackUrl(form: ContactPayload) {
   const subject = `Contato via portfolio - ${form.name}`.trim();
   const body = [
     `Nome: ${form.name}`,
@@ -28,7 +29,11 @@ function buildMailtoUrl(form: ContactPayload) {
     form.message,
   ].join("\n");
 
-  return `mailto:${siteConfig.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  return buildEmailComposeUrl({
+    to: siteConfig.email,
+    subject,
+    body,
+  });
 }
 
 function resolveErrorMessage(errorCode: string | undefined, t: ReturnType<typeof useTranslations>) {
@@ -78,7 +83,13 @@ export function ContactForm() {
 
       if (!response.ok) {
         if (result.error === "email_not_configured") {
-          window.location.href = buildMailtoUrl(form);
+          const fallbackUrl = buildEmailFallbackUrl(form);
+          const newTab = window.open(fallbackUrl, "_blank", "noopener,noreferrer");
+
+          if (!newTab) {
+            window.location.href = fallbackUrl;
+          }
+
           setStatus({
             type: "success",
             message: t("configFallbackNotice"),
@@ -155,8 +166,10 @@ export function ContactForm() {
         <p className="text-sm text-muted-foreground">
           {t("directEmailPrefix")}{" "}
           <a
-            href={`mailto:${siteConfig.email}`}
+            href={siteConfig.emailComposeUrl}
             className="font-medium text-foreground transition-colors duration-300 hover:text-accent"
+            target="_blank"
+            rel="noreferrer noopener"
           >
             {siteConfig.email}
           </a>
