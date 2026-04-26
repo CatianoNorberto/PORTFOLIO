@@ -5,7 +5,6 @@ import { useState } from "react";
 import { useTranslations } from "next-intl";
 import type { ContactPayload } from "@/types/contact";
 import { siteConfig } from "@/lib/site";
-import { buildEmailComposeUrl } from "@/lib/utils";
 import { Button } from "@/components/ui/Button";
 
 const initialForm: ContactPayload = {
@@ -18,23 +17,6 @@ type FormStatus = {
   type: "idle" | "success" | "error";
   message: string;
 };
-
-function buildEmailFallbackUrl(form: ContactPayload) {
-  const subject = `Contato via portfolio - ${form.name}`.trim();
-  const body = [
-    `Nome: ${form.name}`,
-    `Email: ${form.email}`,
-    "",
-    "Mensagem:",
-    form.message,
-  ].join("\n");
-
-  return buildEmailComposeUrl({
-    to: siteConfig.email,
-    subject,
-    body,
-  });
-}
 
 function resolveErrorMessage(errorCode: string | undefined, t: ReturnType<typeof useTranslations>) {
   switch (errorCode) {
@@ -51,6 +33,7 @@ export function ContactForm() {
   const [form, setForm] = useState<ContactPayload>(initialForm);
   const [status, setStatus] = useState<FormStatus>({ type: "idle", message: "" });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [fallbackComposeUrl, setFallbackComposeUrl] = useState<string | null>(null);
   const t = useTranslations("ContactForm");
   const tCommon = useTranslations("Common");
 
@@ -69,6 +52,7 @@ export function ContactForm() {
     event.preventDefault();
     setIsSubmitting(true);
     setStatus({ type: "idle", message: "" });
+    setFallbackComposeUrl(null);
 
     try {
       const response = await fetch("/api/contact", {
@@ -79,24 +63,23 @@ export function ContactForm() {
         body: JSON.stringify(form),
       });
 
-      const result = (await response.json()) as { error?: string };
+      const result = (await response.json()) as {
+        error?: string;
+        success?: boolean;
+        mode?: "external_compose";
+        composeUrl?: string;
+      };
+
+      if (result.mode === "external_compose" && result.composeUrl) {
+        setFallbackComposeUrl(result.composeUrl);
+        setStatus({
+          type: "success",
+          message: t("configFallbackNotice"),
+        });
+        return;
+      }
 
       if (!response.ok) {
-        if (result.error === "email_not_configured") {
-          const fallbackUrl = buildEmailFallbackUrl(form);
-          const newTab = window.open(fallbackUrl, "_blank", "noopener,noreferrer");
-
-          if (!newTab) {
-            window.location.href = fallbackUrl;
-          }
-
-          setStatus({
-            type: "success",
-            message: t("configFallbackNotice"),
-          });
-          return;
-        }
-
         throw new Error(resolveErrorMessage(result.error, t));
       }
 
@@ -178,15 +161,23 @@ export function ContactForm() {
       </div>
 
       {status.type !== "idle" ? (
-        <p
-          className={`rounded-3xl border px-4 py-3 text-sm ${
+        <div className="space-y-3">
+          <p
+            className={`rounded-3xl border px-4 py-3 text-sm ${
             status.type === "success"
               ? "border-cyan/25 bg-cyan-soft text-foreground"
               : "border-accent/25 bg-accent-soft text-foreground"
-          }`}
-        >
-          {status.message}
-        </p>
+            }`}
+          >
+            {status.message}
+          </p>
+
+          {fallbackComposeUrl ? (
+            <Button href={fallbackComposeUrl} variant="secondary">
+              {t("openPreparedEmail")}
+            </Button>
+          ) : null}
+        </div>
       ) : null}
     </form>
   );

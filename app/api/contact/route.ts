@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { buildContactEmail } from "@/lib/contact-email";
 import { siteConfig } from "@/lib/site";
+import { buildEmailComposeUrl } from "@/lib/utils";
 import type { ContactPayload } from "@/types/contact";
 
 const RESEND_API_URL = "https://api.resend.com/emails";
@@ -45,11 +46,25 @@ export async function POST(request: Request) {
   const destinationEmail = process.env.CONTACT_TO_EMAIL ?? siteConfig.email;
 
   if (!apiKey) {
-    console.warn("[portfolio-contact] Missing RESEND_API_KEY");
+    console.info("[portfolio-contact] Direct delivery unavailable, using compose fallback");
 
     return NextResponse.json(
-      { error: "email_not_configured" },
-      { status: 500 }
+      {
+        success: false,
+        mode: "external_compose",
+        composeUrl: buildEmailComposeUrl({
+          to: destinationEmail,
+          subject: `Contato via portfolio - ${contactData.name}`.trim(),
+          body: [
+            `Nome: ${contactData.name}`,
+            `Email: ${contactData.email}`,
+            "",
+            "Mensagem:",
+            contactData.message,
+          ].join("\n"),
+        }),
+      },
+      { status: 200 }
     );
   }
 

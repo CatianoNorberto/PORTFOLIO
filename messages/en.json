@@ -309,7 +309,8 @@
     "sendError": "Could not send your message right now.",
     "genericError": "An error occurred while sending your message.",
     "configError": "Email delivery is not configured in this environment yet.",
-    "configFallbackNotice": "Direct delivery is not active here yet. I opened your email app with the message prefilled so you can finish sending it.",
+    "configFallbackNotice": "Direct delivery is not active here yet. I prepared the message so you can continue in Gmail.",
+    "openPreparedEmail": "Open message in Gmail",
     "validationError": "Please fill in your name, a valid email address and a message before sending."
   }
 }
