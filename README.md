@@ -75,7 +75,7 @@ Para envio real de mensagens pelo formulario, crie um arquivo `.env.local` com:
 ```bash
 RESEND_API_KEY=
 RESEND_FROM_EMAIL="Portfolio Catiano <onboarding@resend.dev>"
-CONTACT_TO_EMAIL="catianonorberto@gmail.com"
+CONTACT_TO_EMAIL="your-email@example.com"
 ```
 
 ### Notes
